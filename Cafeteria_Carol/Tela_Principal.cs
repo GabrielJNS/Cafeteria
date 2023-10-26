@@ -21,5 +21,33 @@ namespace Cafeteria_Carol
         {
 
         }
+
+        private void bt_Cardápio_Click(object sender, EventArgs e)
+        {
+            Tela_Cardapio novo = new Tela_Cardapio();
+            novo.Show();
+        }
+
+        private void bt_Comanda_Click(object sender, EventArgs e)
+        {
+            Tela_Comandas novo = new Tela_Comandas();
+            novo.Show();
+        }
+
+        private void bt_ResumoPedido_Click(object sender, EventArgs e)
+        {
+            Tela_Resumo_Pedido novo = new Tela_Resumo_Pedido();
+            novo.Show();
+        }
+
+        private void Tela_Principal_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -31,15 +31,19 @@
             this.bt_cadastrar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label_nome = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.campo_Nome = new System.Windows.Forms.TextBox();
             this.cadastro_email = new System.Windows.Forms.Label();
             this.cadastro_confirmar_email = new System.Windows.Forms.Label();
             this.cadastro_senha = new System.Windows.Forms.Label();
             this.cadastro_confirmar_senha = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.campo_Email = new System.Windows.Forms.TextBox();
+            this.campo_Conf_Email = new System.Windows.Forms.TextBox();
+            this.campo_Senha = new System.Windows.Forms.TextBox();
+            this.campo_Conf_Senha = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.campo_Tel = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.campo_Data = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // bt_cadastrar
@@ -51,6 +55,7 @@
             this.bt_cadastrar.TabIndex = 0;
             this.bt_cadastrar.Text = "Cadastrar-se";
             this.bt_cadastrar.UseVisualStyleBackColor = true;
+            this.bt_cadastrar.Click += new System.EventHandler(this.bt_cadastrar_Click);
             // 
             // label1
             // 
@@ -71,14 +76,14 @@
             this.label_nome.TabIndex = 2;
             this.label_nome.Text = "Nome";
             // 
-            // textBox1
+            // campo_Nome
             // 
-            this.textBox1.Location = new System.Drawing.Point(104, 78);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(89, 22);
-            this.textBox1.TabIndex = 3;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.campo_Nome.Location = new System.Drawing.Point(104, 78);
+            this.campo_Nome.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.campo_Nome.Name = "campo_Nome";
+            this.campo_Nome.Size = new System.Drawing.Size(89, 22);
+            this.campo_Nome.TabIndex = 3;
+            this.campo_Nome.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // cadastro_email
             // 
@@ -116,58 +121,100 @@
             this.cadastro_confirmar_senha.TabIndex = 7;
             this.cadastro_confirmar_senha.Text = "Confirmar senha";
             // 
-            // textBox2
+            // campo_Email
             // 
-            this.textBox2.Location = new System.Drawing.Point(107, 117);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(89, 22);
-            this.textBox2.TabIndex = 8;
-            this.textBox2.TextChanged += new System.EventHandler(this.TextBox2_TextChanged);
+            this.campo_Email.Location = new System.Drawing.Point(107, 117);
+            this.campo_Email.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.campo_Email.Name = "campo_Email";
+            this.campo_Email.Size = new System.Drawing.Size(89, 22);
+            this.campo_Email.TabIndex = 8;
+            this.campo_Email.TextChanged += new System.EventHandler(this.TextBox2_TextChanged);
             // 
-            // textBox3
+            // campo_Conf_Email
             // 
-            this.textBox3.Location = new System.Drawing.Point(171, 151);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(89, 22);
-            this.textBox3.TabIndex = 9;
+            this.campo_Conf_Email.Location = new System.Drawing.Point(171, 151);
+            this.campo_Conf_Email.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.campo_Conf_Email.Name = "campo_Conf_Email";
+            this.campo_Conf_Email.Size = new System.Drawing.Size(89, 22);
+            this.campo_Conf_Email.TabIndex = 9;
             // 
-            // textBox4
+            // campo_Senha
             // 
-            this.textBox4.Location = new System.Drawing.Point(109, 188);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(89, 22);
-            this.textBox4.TabIndex = 10;
+            this.campo_Senha.Location = new System.Drawing.Point(109, 188);
+            this.campo_Senha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.campo_Senha.Name = "campo_Senha";
+            this.campo_Senha.Size = new System.Drawing.Size(89, 22);
+            this.campo_Senha.TabIndex = 10;
             // 
-            // textBox5
+            // campo_Conf_Senha
             // 
-            this.textBox5.Location = new System.Drawing.Point(172, 225);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(89, 22);
-            this.textBox5.TabIndex = 11;
+            this.campo_Conf_Senha.Location = new System.Drawing.Point(172, 225);
+            this.campo_Conf_Senha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.campo_Conf_Senha.Name = "campo_Conf_Senha";
+            this.campo_Conf_Senha.Size = new System.Drawing.Size(89, 22);
+            this.campo_Conf_Senha.TabIndex = 11;
+            this.campo_Conf_Senha.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(383, 83);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(64, 17);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Telefone";
+            // 
+            // campo_Tel
+            // 
+            this.campo_Tel.Location = new System.Drawing.Point(455, 80);
+            this.campo_Tel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.campo_Tel.Name = "campo_Tel";
+            this.campo_Tel.Size = new System.Drawing.Size(89, 22);
+            this.campo_Tel.TabIndex = 13;
+            this.campo_Tel.TextChanged += new System.EventHandler(this.campo_Tel_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(383, 139);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(136, 17);
+            this.label3.TabIndex = 14;
+            this.label3.Text = "Data de Nascimento";
+            // 
+            // campo_Data
+            // 
+            this.campo_Data.Location = new System.Drawing.Point(527, 139);
+            this.campo_Data.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.campo_Data.Name = "campo_Data";
+            this.campo_Data.Size = new System.Drawing.Size(89, 22);
+            this.campo_Data.TabIndex = 15;
+            this.campo_Data.TextChanged += new System.EventHandler(this.campo_Data_TextChanged);
             // 
             // Tela_Cadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(711, 360);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.campo_Data);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.campo_Tel);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.campo_Conf_Senha);
+            this.Controls.Add(this.campo_Senha);
+            this.Controls.Add(this.campo_Conf_Email);
+            this.Controls.Add(this.campo_Email);
             this.Controls.Add(this.cadastro_confirmar_senha);
             this.Controls.Add(this.cadastro_senha);
             this.Controls.Add(this.cadastro_confirmar_email);
             this.Controls.Add(this.cadastro_email);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.campo_Nome);
             this.Controls.Add(this.label_nome);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.bt_cadastrar);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Tela_Cadastro";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tela_Cadastro";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -179,14 +226,18 @@
         private System.Windows.Forms.Button bt_cadastrar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label_nome;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox campo_Nome;
         private System.Windows.Forms.Label cadastro_email;
         private System.Windows.Forms.Label cadastro_confirmar_email;
         private System.Windows.Forms.Label cadastro_senha;
         private System.Windows.Forms.Label cadastro_confirmar_senha;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox campo_Email;
+        private System.Windows.Forms.TextBox campo_Conf_Email;
+        private System.Windows.Forms.TextBox campo_Senha;
+        private System.Windows.Forms.TextBox campo_Conf_Senha;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox campo_Tel;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox campo_Data;
     }
 }
