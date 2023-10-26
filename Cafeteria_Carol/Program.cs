@@ -16,7 +16,7 @@ namespace Cafeteria_Carol
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Tela_Principal());
+            Application.Run(new Logar());
         }
     }
 }

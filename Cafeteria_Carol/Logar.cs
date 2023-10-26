@@ -16,5 +16,41 @@ namespace Cafeteria_Carol
         {
             InitializeComponent();
         }
+
+        private void Logar_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Bt_cadastrar_Click(object sender, EventArgs e)
+        {
+            Tela_Cadastro nova = new Tela_Cadastro();
+            nova.Show();
+        }
+
+        private void Bt_entrar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -67,6 +67,12 @@
   <ItemGroup>
     <Compile Include="Banco.cs" />
     <Compile Include="Globais.cs" />
+    <Compile Include="Tela_Cadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tela_Cadastro.Designer.cs">
+      <DependentUpon>Tela_Cadastro.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tela_Principal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,6 +87,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Tela_Cadastro.resx">
+      <DependentUpon>Tela_Cadastro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Tela_Principal.resx">
       <DependentUpon>Tela_Principal.cs</DependentUpon>
     </EmbeddedResource>
