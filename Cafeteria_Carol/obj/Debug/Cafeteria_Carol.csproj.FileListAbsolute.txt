@@ -65,3 +65,4 @@ C:\Users\gabri\source\repos\Projeto_Cafeteria\Cafeteria_Carol\obj\Debug\Cafeteri
 C:\Users\gabri\source\repos\Projeto_Cafeteria\Cafeteria_Carol\obj\Debug\Cafeteria_Carol.Tela_Principal_Usuario.resources
 C:\Users\gabri\source\repos\Projeto_Cafeteria\Cafeteria_Carol\obj\Debug\Cafeteria_Carol.Tela_Principal_Admin.resources
 C:\Users\gabri\source\repos\Projeto_Cafeteria\Cafeteria_Carol\obj\Debug\Cafeteria_Carol.Tela_Cardapio_Usuario.resources
+C:\Users\gabri\source\repos\Projeto_Cafeteria\Cafeteria_Carol\obj\Debug\Cafeteria_Carol.Tela_Gerenciar_Produtos.resources

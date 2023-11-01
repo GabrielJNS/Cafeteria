@@ -86,6 +86,12 @@
     <Compile Include="Tela_Comandas.Designer.cs">
       <DependentUpon>Tela_Comandas.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tela_Gerenciar_Produtos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tela_Gerenciar_Produtos.Designer.cs">
+      <DependentUpon>Tela_Gerenciar_Produtos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tela_Principal_Atendente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +132,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Tela_Comandas.resx">
       <DependentUpon>Tela_Comandas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tela_Gerenciar_Produtos.resx">
+      <DependentUpon>Tela_Gerenciar_Produtos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tela_Principal_Atendente.resx">
       <DependentUpon>Tela_Principal_Atendente.cs</DependentUpon>

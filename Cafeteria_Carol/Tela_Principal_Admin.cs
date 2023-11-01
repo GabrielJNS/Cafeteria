@@ -16,5 +16,12 @@ namespace Cafeteria_Carol
         {
             InitializeComponent();
         }
+
+        private void bt_Gerenciar_Produtos_Click(object sender, EventArgs e)
+        {
+            Tela_Gerenciar_Produtos novo = new Tela_Gerenciar_Produtos();
+            novo.Show();
+
+        }
     }
 }

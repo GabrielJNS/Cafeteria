@@ -35,6 +35,7 @@ namespace Cafeteria_Carol
             this.bt_Gerenciar = new System.Windows.Forms.Button();
             this.bt_Gerenciar_Vendas = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.bt_Gerenciar_Produtos = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label2
@@ -91,11 +92,22 @@ namespace Cafeteria_Carol
             this.button1.Text = "Usuário";
             this.button1.UseVisualStyleBackColor = true;
             // 
+            // bt_Gerenciar_Produtos
+            // 
+            this.bt_Gerenciar_Produtos.Location = new System.Drawing.Point(12, 301);
+            this.bt_Gerenciar_Produtos.Name = "bt_Gerenciar_Produtos";
+            this.bt_Gerenciar_Produtos.Size = new System.Drawing.Size(189, 74);
+            this.bt_Gerenciar_Produtos.TabIndex = 8;
+            this.bt_Gerenciar_Produtos.Text = "Gerenciar Produtos";
+            this.bt_Gerenciar_Produtos.UseVisualStyleBackColor = true;
+            this.bt_Gerenciar_Produtos.Click += new System.EventHandler(this.bt_Gerenciar_Produtos_Click);
+            // 
             // Tela_Principal_Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.bt_Gerenciar_Produtos);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.bt_Gerenciar_Vendas);
             this.Controls.Add(this.bt_Gerenciar);
@@ -117,5 +129,6 @@ namespace Cafeteria_Carol
         private System.Windows.Forms.Button bt_Gerenciar;
         private System.Windows.Forms.Button bt_Gerenciar_Vendas;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button bt_Gerenciar_Produtos;
     }
 }

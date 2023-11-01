@@ -78,7 +78,7 @@ namespace Cafeteria_Carol
                     if (nivel > 0)
                     {
 
-                        if (email.EndsWith(".com"))
+                        if (email.EndsWith("hotmail.com") || email.EndsWith("gmail.com"))
                         {
                             nivel = 1;
                             MessageBox.Show($"usuario {email} login bem-sucedido!");
