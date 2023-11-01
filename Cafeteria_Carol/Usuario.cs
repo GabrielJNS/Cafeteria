@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace Cafeteria_Carol
 {
-    class Globais
+    class Class1
     {
-        public static  string versao = "1.0";
-        public static Boolean logado=false;
-
     }
 }

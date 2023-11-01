@@ -52,7 +52,6 @@ C:\Users\gabri\Source\Repos\Projeto_Cafeteria\Cafeteria_Carol\bin\Debug\EntityFr
 C:\Users\gabri\Source\Repos\Projeto_Cafeteria\Cafeteria_Carol\bin\Debug\System.Data.SQLite.xml
 C:\Users\gabri\Source\Repos\Projeto_Cafeteria\Cafeteria_Carol\obj\Debug\Cafeteria_Carol.csproj.AssemblyReference.cache
 C:\Users\gabri\Source\Repos\Projeto_Cafeteria\Cafeteria_Carol\obj\Debug\Cafeteria_Carol.Tela_Cadastro.resources
-C:\Users\gabri\Source\Repos\Projeto_Cafeteria\Cafeteria_Carol\obj\Debug\Cafeteria_Carol.Tela_Principal.resources
 C:\Users\gabri\Source\Repos\Projeto_Cafeteria\Cafeteria_Carol\obj\Debug\Cafeteria_Carol.Properties.Resources.resources
 C:\Users\gabri\Source\Repos\Projeto_Cafeteria\Cafeteria_Carol\obj\Debug\Cafeteria_Carol.csproj.GenerateResource.cache
 C:\Users\gabri\Source\Repos\Projeto_Cafeteria\Cafeteria_Carol\obj\Debug\Cafeteria_Carol.csproj.CoreCompileInputs.cache
@@ -60,6 +59,9 @@ C:\Users\gabri\Source\Repos\Projeto_Cafeteria\Cafeteria_Carol\obj\Debug\Cafeteri
 C:\Users\gabri\Source\Repos\Projeto_Cafeteria\Cafeteria_Carol\obj\Debug\Cafeteria_Carol.exe
 C:\Users\gabri\Source\Repos\Projeto_Cafeteria\Cafeteria_Carol\obj\Debug\Cafeteria_Carol.pdb
 C:\Users\gabri\Source\Repos\Projeto_Cafeteria\Cafeteria_Carol\obj\Debug\Cafeteria_Carol.Tela_Login.resources
-C:\Users\gabri\Source\Repos\Projeto_Cafeteria\Cafeteria_Carol\obj\Debug\Cafeteria_Carol.Tela_Cardapio.resources
 C:\Users\gabri\Source\Repos\Projeto_Cafeteria\Cafeteria_Carol\obj\Debug\Cafeteria_Carol.Tela_Comandas.resources
 C:\Users\gabri\Source\Repos\Projeto_Cafeteria\Cafeteria_Carol\obj\Debug\Cafeteria_Carol.Tela_Resumo_Pedido.resources
+C:\Users\gabri\source\repos\Projeto_Cafeteria\Cafeteria_Carol\obj\Debug\Cafeteria_Carol.Tela_Principal_Atendente.resources
+C:\Users\gabri\source\repos\Projeto_Cafeteria\Cafeteria_Carol\obj\Debug\Cafeteria_Carol.Tela_Principal_Usuario.resources
+C:\Users\gabri\source\repos\Projeto_Cafeteria\Cafeteria_Carol\obj\Debug\Cafeteria_Carol.Tela_Principal_Admin.resources
+C:\Users\gabri\source\repos\Projeto_Cafeteria\Cafeteria_Carol\obj\Debug\Cafeteria_Carol.Tela_Cardapio_Usuario.resources

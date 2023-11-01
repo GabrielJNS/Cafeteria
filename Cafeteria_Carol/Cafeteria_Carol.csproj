@@ -66,18 +66,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Banco.cs" />
-    <Compile Include="Globais.cs" />
+    <Compile Include="ItemSacola.cs" />
+    <Compile Include="Sacola.cs" />
     <Compile Include="Tela_Cadastro.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Tela_Cadastro.Designer.cs">
       <DependentUpon>Tela_Cadastro.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tela_Cardapio.cs">
+    <Compile Include="Tela_Cardapio_Usuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tela_Cardapio.Designer.cs">
-      <DependentUpon>Tela_Cardapio.cs</DependentUpon>
+    <Compile Include="Tela_Cardapio_Usuario.Designer.cs">
+      <DependentUpon>Tela_Cardapio_Usuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Tela_Comandas.cs">
       <SubType>Form</SubType>
@@ -85,11 +86,17 @@
     <Compile Include="Tela_Comandas.Designer.cs">
       <DependentUpon>Tela_Comandas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Tela_Principal.cs">
+    <Compile Include="Tela_Principal_Atendente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Tela_Principal.Designer.cs">
-      <DependentUpon>Tela_Principal.cs</DependentUpon>
+    <Compile Include="Tela_Principal_Atendente.Designer.cs">
+      <DependentUpon>Tela_Principal_Atendente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tela_Principal_Usuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tela_Principal_Usuario.Designer.cs">
+      <DependentUpon>Tela_Principal_Usuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Tela_Login.cs">
       <SubType>Form</SubType>
@@ -105,17 +112,26 @@
     <Compile Include="Tela_Resumo_Pedido.Designer.cs">
       <DependentUpon>Tela_Resumo_Pedido.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tela_Principal_Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tela_Principal_Admin.Designer.cs">
+      <DependentUpon>Tela_Principal_Admin.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Tela_Cadastro.resx">
       <DependentUpon>Tela_Cadastro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tela_Cardapio.resx">
-      <DependentUpon>Tela_Cardapio.cs</DependentUpon>
+    <EmbeddedResource Include="Tela_Cardapio_Usuario.resx">
+      <DependentUpon>Tela_Cardapio_Usuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tela_Comandas.resx">
       <DependentUpon>Tela_Comandas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Tela_Principal.resx">
-      <DependentUpon>Tela_Principal.cs</DependentUpon>
+    <EmbeddedResource Include="Tela_Principal_Atendente.resx">
+      <DependentUpon>Tela_Principal_Atendente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tela_Principal_Usuario.resx">
+      <DependentUpon>Tela_Principal_Usuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tela_Login.resx">
       <DependentUpon>Tela_Login.cs</DependentUpon>
@@ -131,6 +147,9 @@
     </Compile>
     <EmbeddedResource Include="Tela_Resumo_Pedido.resx">
       <DependentUpon>Tela_Resumo_Pedido.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tela_Principal_Admin.resx">
+      <DependentUpon>Tela_Principal_Admin.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

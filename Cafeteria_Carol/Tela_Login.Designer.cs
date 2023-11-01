@@ -42,10 +42,10 @@ namespace Cafeteria_Carol
             // bt_entrar
             // 
             this.bt_entrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_entrar.Location = new System.Drawing.Point(356, 240);
-            this.bt_entrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bt_entrar.Location = new System.Drawing.Point(267, 195);
+            this.bt_entrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.bt_entrar.Name = "bt_entrar";
-            this.bt_entrar.Size = new System.Drawing.Size(67, 30);
+            this.bt_entrar.Size = new System.Drawing.Size(50, 24);
             this.bt_entrar.TabIndex = 0;
             this.bt_entrar.Text = "Entrar";
             this.bt_entrar.UseVisualStyleBackColor = true;
@@ -54,9 +54,10 @@ namespace Cafeteria_Carol
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(195, 41);
+            this.label1.Location = new System.Drawing.Point(146, 33);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(367, 17);
+            this.label1.Size = new System.Drawing.Size(275, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Olá,entre com a sua conta para acessar nosso aplicativo";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -64,19 +65,21 @@ namespace Cafeteria_Carol
             // 
             // textbox_logemail
             // 
-            this.textbox_logemail.Location = new System.Drawing.Point(269, 128);
-            this.textbox_logemail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textbox_logemail.Location = new System.Drawing.Point(202, 104);
+            this.textbox_logemail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textbox_logemail.Name = "textbox_logemail";
-            this.textbox_logemail.Size = new System.Drawing.Size(241, 22);
+            this.textbox_logemail.Size = new System.Drawing.Size(182, 20);
             this.textbox_logemail.TabIndex = 2;
+            this.textbox_logemail.Text = "jose@hotmail.com";
             this.textbox_logemail.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
             // 
             // label_logemail
             // 
             this.label_logemail.AutoSize = true;
-            this.label_logemail.Location = new System.Drawing.Point(217, 128);
+            this.label_logemail.Location = new System.Drawing.Point(163, 104);
+            this.label_logemail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_logemail.Name = "label_logemail";
-            this.label_logemail.Size = new System.Drawing.Size(51, 17);
+            this.label_logemail.Size = new System.Drawing.Size(38, 13);
             this.label_logemail.TabIndex = 3;
             this.label_logemail.Text = "E-mail:";
             this.label_logemail.Click += new System.EventHandler(this.Label2_Click);
@@ -84,37 +87,41 @@ namespace Cafeteria_Carol
             // label_logsenha
             // 
             this.label_logsenha.AutoSize = true;
-            this.label_logsenha.Location = new System.Drawing.Point(214, 184);
+            this.label_logsenha.Location = new System.Drawing.Point(160, 150);
+            this.label_logsenha.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_logsenha.Name = "label_logsenha";
-            this.label_logsenha.Size = new System.Drawing.Size(53, 17);
+            this.label_logsenha.Size = new System.Drawing.Size(41, 13);
             this.label_logsenha.TabIndex = 4;
             this.label_logsenha.Text = "Senha:";
             this.label_logsenha.Click += new System.EventHandler(this.Label3_Click);
             // 
             // textBox_logsenha
             // 
-            this.textBox_logsenha.Location = new System.Drawing.Point(269, 182);
-            this.textBox_logsenha.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox_logsenha.Location = new System.Drawing.Point(202, 148);
+            this.textBox_logsenha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox_logsenha.Name = "textBox_logsenha";
-            this.textBox_logsenha.Size = new System.Drawing.Size(245, 22);
+            this.textBox_logsenha.Size = new System.Drawing.Size(185, 20);
             this.textBox_logsenha.TabIndex = 5;
+            this.textBox_logsenha.Text = "123";
+            this.textBox_logsenha.TextChanged += new System.EventHandler(this.textBox_logsenha_TextChanged_1);
             // 
             // label_semcadastro
             // 
             this.label_semcadastro.AutoSize = true;
-            this.label_semcadastro.Location = new System.Drawing.Point(266, 297);
+            this.label_semcadastro.Location = new System.Drawing.Point(200, 241);
+            this.label_semcadastro.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_semcadastro.Name = "label_semcadastro";
-            this.label_semcadastro.Size = new System.Drawing.Size(132, 17);
+            this.label_semcadastro.Size = new System.Drawing.Size(100, 13);
             this.label_semcadastro.TabIndex = 6;
             this.label_semcadastro.Text = "Não tem cadastro ?\r\n";
             // 
             // bt_cadastrar
             // 
             this.bt_cadastrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bt_cadastrar.Location = new System.Drawing.Point(403, 291);
-            this.bt_cadastrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bt_cadastrar.Location = new System.Drawing.Point(302, 236);
+            this.bt_cadastrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.bt_cadastrar.Name = "bt_cadastrar";
-            this.bt_cadastrar.Size = new System.Drawing.Size(111, 35);
+            this.bt_cadastrar.Size = new System.Drawing.Size(83, 28);
             this.bt_cadastrar.TabIndex = 7;
             this.bt_cadastrar.Text = "Cadastra-se";
             this.bt_cadastrar.UseVisualStyleBackColor = true;
@@ -122,9 +129,9 @@ namespace Cafeteria_Carol
             // 
             // Tela_Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(729, 365);
+            this.ClientSize = new System.Drawing.Size(547, 297);
             this.Controls.Add(this.bt_cadastrar);
             this.Controls.Add(this.label_semcadastro);
             this.Controls.Add(this.textBox_logsenha);
@@ -133,7 +140,6 @@ namespace Cafeteria_Carol
             this.Controls.Add(this.textbox_logemail);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.bt_entrar);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Tela_Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Logar";

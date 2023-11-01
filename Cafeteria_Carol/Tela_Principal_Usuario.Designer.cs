@@ -1,7 +1,7 @@
 ﻿
 namespace Cafeteria_Carol
 {
-    partial class Tela_Principal
+    partial class Tela_Principal_Usuario
     {
         /// <summary>
         /// Variável de designer necessária.

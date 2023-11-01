@@ -54,7 +54,7 @@ namespace Cafeteria_Carol
         {
         }
 
-        private void bt_cadastrar_Click(object sender, EventArgs e)
+        public void bt_cadastrar_Click(object sender, EventArgs e)
         {
             string nome = campo_Nome.Text;
             string email = campo_Email.Text;
@@ -101,6 +101,17 @@ namespace Cafeteria_Carol
                 MessageBox.Show("Os campos de senha e verificação de senha não coincidem.");
                 return;
             }
+           
+            int nivel = 1;
+
+            if (email.EndsWith("@atendente.com"))
+            {
+                nivel = 2; 
+            }
+            else if (email.EndsWith("@admin.com"))
+            {
+                nivel = 3; 
+            }
 
 
             //Conector
@@ -114,8 +125,8 @@ namespace Cafeteria_Carol
                 using (SQLiteCommand command = new SQLiteCommand(connection))
                 {
                     command.CommandText = @"
-                        INSERT INTO Usuarios (Nome, Email, Senha, Telefone, DataNascimento)
-                        VALUES (@Nome, @Email, @Senha, @Telefone, @DataNascimento)
+                        INSERT INTO Usuarios (Nome, Email, Senha, Telefone, DataNascimento, Nivel)
+                        VALUES (@Nome, @Email, @Senha, @Telefone, @DataNascimento, @Nivel)
                     ";
 
                     command.Parameters.AddWithValue("@Nome", nome);
@@ -123,6 +134,7 @@ namespace Cafeteria_Carol
                     command.Parameters.AddWithValue("@Senha", senha);
                     command.Parameters.AddWithValue("@Telefone", telefone);
                     command.Parameters.AddWithValue("@DataNascimento", dataNascimento);
+                    command.Parameters.AddWithValue("@Nivel", nivel);
 
                     command.ExecuteNonQuery();
 
@@ -132,7 +144,7 @@ namespace Cafeteria_Carol
             }
         }
 
-        private void CriarTabelaUsuarios()
+        public void CriarTabelaUsuarios()
         {
             string connectionString = "Data Source=C:\\Users\\gabri\\source\\repos\\Projeto_Cafeteria\\Cafeteria_Carol\\Banco\\bd_cafeteria.db";
 
@@ -149,7 +161,9 @@ namespace Cafeteria_Carol
                             Email TEXT,
                             Senha TEXT,
                             Telefone TEXT,
-                            DataNascimento DATE
+                            DataNascimento DATE,
+                            Nivel INTEGER
+
                         );
                     ";
 

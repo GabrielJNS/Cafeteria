@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Cafeteria_Carol
 {
-    public partial class Tela_Principal : Form
+    public partial class Tela_Principal_Usuario : Form
     {
-        public Tela_Principal()
+        public Tela_Principal_Usuario()
         {
             InitializeComponent();
         }
@@ -24,7 +24,7 @@ namespace Cafeteria_Carol
 
         private void bt_Cardápio_Click(object sender, EventArgs e)
         {
-            Tela_Cardapio novo = new Tela_Cardapio();
+            Tela_Cardapio_Usuario novo = new Tela_Cardapio_Usuario();
             novo.Show();
         }
 

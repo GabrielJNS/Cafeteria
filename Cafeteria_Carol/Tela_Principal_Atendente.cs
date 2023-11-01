@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Cafeteria_Carol
 {
-    public partial class Tela_Cardapio : Form
+    public partial class Tela_Principal_Atendente : Form
     {
-        public Tela_Cardapio()
+        public Tela_Principal_Atendente()
         {
             InitializeComponent();
+        }
+
+        private void Tela_Principal_Atendente_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -17,6 +17,8 @@ namespace Cafeteria_Carol
         public Tela_Login()
         {
             InitializeComponent();
+            CriarTabelaCardapio();
+
         }
 
         private void Logar_Load(object sender, EventArgs e)
@@ -50,13 +52,14 @@ namespace Cafeteria_Carol
             nova.Show();
         }
 
-        private void Bt_entrar_Click(object sender, EventArgs e)
+        public void Bt_entrar_Click(object sender, EventArgs e)
         {
-            string email = textbox_logemail.Text; 
-            string senha = textBox_logsenha.Text; 
+            string email = textbox_logemail.Text;
+            string senha = textBox_logsenha.Text;
 
             string connectionString = "Data Source=C:\\Users\\gabri\\source\\repos\\Projeto_Cafeteria\\Cafeteria_Carol\\Banco\\bd_cafeteria.db";
-           
+
+
             using (SQLiteConnection connection = new SQLiteConnection(connectionString))
             {
                 connection.Open();
@@ -68,26 +71,83 @@ namespace Cafeteria_Carol
                     command.Parameters.AddWithValue("@Email", email);
                     command.Parameters.AddWithValue("@Senha", senha);
 
-                    int result = Convert.ToInt32(command.ExecuteScalar());
+                    int nivel = Convert.ToInt32(command.ExecuteScalar());
 
 
-                    if (result > 0)
+
+                    if (nivel > 0)
                     {
-                        MessageBox.Show("Login bem-sucedido!");
 
-                        Tela_Principal novo = new Tela_Principal();
-                        novo.Show();
+                        if (email.EndsWith(".com"))
+                        {
+                            nivel = 1;
+                            MessageBox.Show($"usuario {email} login bem-sucedido!");
+                            Tela_Principal_Usuario novo = new Tela_Principal_Usuario();
+                            novo.Show();
 
-                        
+
+                        }
+                        else if (email.EndsWith("@atendente.com"))
+                        {
+                            nivel = 2;
+                            MessageBox.Show($"atendente {email} login bem-sucedido!");
+                            Tela_Principal_Atendente novo = new Tela_Principal_Atendente();
+                            novo.Show();
+                        }
+                        else if (email.EndsWith("@admin.com"))
+                        {
+                            nivel = 3;
+                            MessageBox.Show($"admin {email} login bem-sucedido!");
+                            Tela_Principal_Admin novo = new Tela_Principal_Admin();
+                            novo.Show();
+
+                        };
+
                     }
+
                     else
                     {
                         MessageBox.Show("Email ou senha incorretos. Tente novamente.");
                     }
-                    
+                    MessageBox.Show("Nível: " + nivel);
+
                 }
             }
-        
-    }
+
+        }
+        private void CriarTabelaCardapio()
+        {
+            string connectionString = "Data Source=C:\\Users\\gabri\\source\\repos\\Projeto_Cafeteria\\Cafeteria_Carol\\Banco\\bd_cafeteria.db";
+
+            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+            {
+                connection.Open();
+
+                using (SQLiteCommand command = new SQLiteCommand(connection))
+                {
+                    command.CommandText = @"
+                        CREATE TABLE IF NOT EXISTS Cardapio (
+                            ID INTEGER PRIMARY KEY AUTOINCREMENT,
+                            Nome TEXT,
+                            Descricao TEXT,
+                            Preco REAL,
+                            Imagem BLOB
+                        );
+                    ";
+
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        private void textBox_logsenha_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox_logsenha_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
