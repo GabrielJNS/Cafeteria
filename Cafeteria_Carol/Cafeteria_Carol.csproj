@@ -66,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Banco.cs" />
+    <Compile Include="Pedidos.cs" />
     <Compile Include="ItemSacola.cs" />
     <Compile Include="Sacola.cs" />
     <Compile Include="Tela_Cadastro.cs">
@@ -91,6 +92,12 @@
     </Compile>
     <Compile Include="Tela_Gerenciar_Produtos.Designer.cs">
       <DependentUpon>Tela_Gerenciar_Produtos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tela_Pedido_Atendente .cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tela_Pedido_Atendente .Designer.cs">
+      <DependentUpon>Tela_Pedido_Atendente .cs</DependentUpon>
     </Compile>
     <Compile Include="Tela_Principal_Atendente.cs">
       <SubType>Form</SubType>
@@ -135,6 +142,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Tela_Gerenciar_Produtos.resx">
       <DependentUpon>Tela_Gerenciar_Produtos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tela_Pedido_Atendente .resx">
+      <DependentUpon>Tela_Pedido_Atendente .cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tela_Principal_Atendente.resx">
       <DependentUpon>Tela_Principal_Atendente.cs</DependentUpon>

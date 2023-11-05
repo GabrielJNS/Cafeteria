@@ -12,9 +12,13 @@ namespace Cafeteria_Carol
 {
     public partial class Tela_Principal_Usuario : Form
     {
-        public Tela_Principal_Usuario()
+        
+
+        public Tela_Principal_Usuario(string nomeUsuario)
         {
             InitializeComponent();
+
+            lb_User.Text = "Bem-vindo, " + nomeUsuario;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -48,6 +52,14 @@ namespace Cafeteria_Carol
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void lb_User_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void Tela_Principal_Usuario_Load(object sender, EventArgs e)
+        {
         }
     }
 }

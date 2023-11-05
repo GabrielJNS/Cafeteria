@@ -34,8 +34,8 @@ namespace Cafeteria_Carol
             this.bt_Cadastro = new System.Windows.Forms.Button();
             this.bt_Gerenciar = new System.Windows.Forms.Button();
             this.bt_Gerenciar_Vendas = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.bt_Gerenciar_Produtos = new System.Windows.Forms.Button();
+            this.lb_User = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label2
@@ -64,6 +64,7 @@ namespace Cafeteria_Carol
             this.bt_Cadastro.TabIndex = 4;
             this.bt_Cadastro.Text = "Cadastrar Funcionário";
             this.bt_Cadastro.UseVisualStyleBackColor = true;
+            this.bt_Cadastro.Click += new System.EventHandler(this.bt_Cadastro_Click);
             // 
             // bt_Gerenciar
             // 
@@ -83,15 +84,6 @@ namespace Cafeteria_Carol
             this.bt_Gerenciar_Vendas.Text = "Gerenciar Vendas";
             this.bt_Gerenciar_Vendas.UseVisualStyleBackColor = true;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(12, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(189, 74);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Usuário";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // bt_Gerenciar_Produtos
             // 
             this.bt_Gerenciar_Produtos.Location = new System.Drawing.Point(12, 301);
@@ -102,13 +94,23 @@ namespace Cafeteria_Carol
             this.bt_Gerenciar_Produtos.UseVisualStyleBackColor = true;
             this.bt_Gerenciar_Produtos.Click += new System.EventHandler(this.bt_Gerenciar_Produtos_Click);
             // 
+            // lb_User
+            // 
+            this.lb_User.AutoSize = true;
+            this.lb_User.Location = new System.Drawing.Point(220, 31);
+            this.lb_User.Name = "lb_User";
+            this.lb_User.Size = new System.Drawing.Size(29, 13);
+            this.lb_User.TabIndex = 9;
+            this.lb_User.Text = "User";
+            this.lb_User.Click += new System.EventHandler(this.lb_User_Click);
+            // 
             // Tela_Principal_Admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lb_User);
             this.Controls.Add(this.bt_Gerenciar_Produtos);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.bt_Gerenciar_Vendas);
             this.Controls.Add(this.bt_Gerenciar);
             this.Controls.Add(this.bt_Cadastro);
@@ -116,6 +118,7 @@ namespace Cafeteria_Carol
             this.Controls.Add(this.label2);
             this.Name = "Tela_Principal_Admin";
             this.Text = "Tele_Principal_Admin";
+            this.Load += new System.EventHandler(this.Tela_Principal_Admin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -128,7 +131,7 @@ namespace Cafeteria_Carol
         private System.Windows.Forms.Button bt_Cadastro;
         private System.Windows.Forms.Button bt_Gerenciar;
         private System.Windows.Forms.Button bt_Gerenciar_Vendas;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button bt_Gerenciar_Produtos;
+        private System.Windows.Forms.Label lb_User;
     }
 }

@@ -39,6 +39,8 @@ namespace Cafeteria_Carol
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.Fotos_Enviar = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.Fotos_Enviar)).BeginInit();
             this.SuspendLayout();
             // 
             // bt_AdicionarProduto
@@ -92,7 +94,6 @@ namespace Cafeteria_Carol
             this.txtIDProduto.Size = new System.Drawing.Size(188, 20);
             this.txtIDProduto.TabIndex = 5;
             this.txtIDProduto.TextChanged += new System.EventHandler(this.txtIDProduto_TextChanged);
-
             // 
             // label1
             // 
@@ -130,11 +131,21 @@ namespace Cafeteria_Carol
             this.label4.TabIndex = 9;
             this.label4.Text = "ID";
             // 
+            // Fotos_Enviar
+            // 
+            this.Fotos_Enviar.Location = new System.Drawing.Point(249, 44);
+            this.Fotos_Enviar.Name = "Fotos_Enviar";
+            this.Fotos_Enviar.Size = new System.Drawing.Size(100, 71);
+            this.Fotos_Enviar.TabIndex = 10;
+            this.Fotos_Enviar.TabStop = false;
+            this.Fotos_Enviar.Click += new System.EventHandler(this.Fotos_Enviar_Click);
+            // 
             // Tela_Gerenciar_Produtos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Fotos_Enviar);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -147,6 +158,7 @@ namespace Cafeteria_Carol
             this.Controls.Add(this.bt_AdicionarProduto);
             this.Name = "Tela_Gerenciar_Produtos";
             this.Text = "Tela_Gerenciar_Produtos";
+            ((System.ComponentModel.ISupportInitialize)(this.Fotos_Enviar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -164,5 +176,6 @@ namespace Cafeteria_Carol
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox Fotos_Enviar;
     }
 }

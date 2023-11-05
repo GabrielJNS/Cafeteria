@@ -34,6 +34,7 @@ namespace Cafeteria_Carol
             this.bt_Menu = new System.Windows.Forms.Button();
             this.bt_Comanda = new System.Windows.Forms.Button();
             this.bt_User_Atendente = new System.Windows.Forms.Button();
+            this.lb_User = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label2
@@ -54,6 +55,7 @@ namespace Cafeteria_Carol
             this.bt_Pedidos.TabIndex = 2;
             this.bt_Pedidos.Text = "Pedidos";
             this.bt_Pedidos.UseVisualStyleBackColor = true;
+            this.bt_Pedidos.Click += new System.EventHandler(this.bt_Pedidos_Click);
             // 
             // bt_Menu
             // 
@@ -72,6 +74,7 @@ namespace Cafeteria_Carol
             this.bt_Comanda.TabIndex = 4;
             this.bt_Comanda.Text = "Comanda";
             this.bt_Comanda.UseVisualStyleBackColor = true;
+            this.bt_Comanda.Click += new System.EventHandler(this.bt_Comanda_Click);
             // 
             // bt_User_Atendente
             // 
@@ -81,12 +84,24 @@ namespace Cafeteria_Carol
             this.bt_User_Atendente.TabIndex = 5;
             this.bt_User_Atendente.Text = "Usuário";
             this.bt_User_Atendente.UseVisualStyleBackColor = true;
+            this.bt_User_Atendente.Click += new System.EventHandler(this.bt_User_Atendente_Click);
+            // 
+            // lb_User
+            // 
+            this.lb_User.AutoSize = true;
+            this.lb_User.Location = new System.Drawing.Point(127, 170);
+            this.lb_User.Name = "lb_User";
+            this.lb_User.Size = new System.Drawing.Size(35, 13);
+            this.lb_User.TabIndex = 6;
+            this.lb_User.Text = "label1";
+            this.lb_User.Click += new System.EventHandler(this.lb_User_Click);
             // 
             // Tela_Principal_Atendente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lb_User);
             this.Controls.Add(this.bt_User_Atendente);
             this.Controls.Add(this.bt_Comanda);
             this.Controls.Add(this.bt_Menu);
@@ -106,5 +121,6 @@ namespace Cafeteria_Carol
         private System.Windows.Forms.Button bt_Menu;
         private System.Windows.Forms.Button bt_Comanda;
         private System.Windows.Forms.Button bt_User_Atendente;
+        private System.Windows.Forms.Label lb_User;
     }
 }

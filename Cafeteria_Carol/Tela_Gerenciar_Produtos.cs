@@ -21,7 +21,7 @@ namespace Cafeteria_Carol
                 InitializeComponent();
             }
 
-            private void bt_AdicionarProduto_Click(object sender, EventArgs e)
+        private void bt_AdicionarProduto_Click(object sender, EventArgs e)
             {
                 string nome = txtNomeProduto.Text;
                 string descricao = txtDescricaoProduto.Text;
@@ -29,7 +29,7 @@ namespace Cafeteria_Carol
 
                 if (decimal.TryParse(txtPrecoProduto.Text, out preco))
                 {
-                    AdicionarProduto(nome, descricao, preco, null);
+                    AdicionarProduto(nome, descricao, preco,  null);
                     MessageBox.Show("Produto adicionado com sucesso!");
                 }
                 else
@@ -68,8 +68,8 @@ namespace Cafeteria_Carol
                             command.Parameters.AddWithValue("@Descricao", descricao);
                             command.Parameters.AddWithValue("@Preco", preco);
                             command.Parameters.AddWithValue("@Imagem", imagem);
-
-                            command.ExecuteNonQuery();
+                          
+                        command.ExecuteNonQuery();
                         }
                     }
                     catch (Exception ex)
@@ -122,5 +122,9 @@ namespace Cafeteria_Carol
 
         }
 
+        private void Fotos_Enviar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -1,25 +1,25 @@
 ﻿using System;
 using System.Data;
 using System.Data.SQLite;
-using System.Drawing;
-using System.IO;
 using System.Windows.Forms;
+using System.Collections.Generic;
 
 namespace Cafeteria_Carol
 {
     public partial class Tela_Cardapio_Usuario : Form
     {
+        private string connectionString = "Data Source=C:\\Users\\gabri\\source\\repos\\Projeto_Cafeteria\\Cafeteria_Carol\\Banco\\bd_cafeteria.db";
+        private Sacola sacola = new Sacola();
+
+
         public Tela_Cardapio_Usuario()
         {
             InitializeComponent();
             CarregarItensCardapio();
         }
-        private Sacola sacola = new Sacola();
 
         private void CarregarItensCardapio()
         {
-            string connectionString = "Data Source=C:\\Users\\gabri\\source\\repos\\Projeto_Cafeteria\\Cafeteria_Carol\\Banco\\bd_cafeteria.db";
-
             using (SQLiteConnection connection = new SQLiteConnection(connectionString))
             {
                 connection.Open();
@@ -36,72 +36,99 @@ namespace Cafeteria_Carol
                         string nome = row["Nome"].ToString();
                         string descricao = row["Descricao"].ToString();
                         double preco = Convert.ToDouble(row["Preco"]);
-                        byte[] imagemBytes = (byte[])row["Imagem"];
-                        Image imagem = ByteArrayToImage(imagemBytes);
 
-                        dataGridViewMenu1.Rows.Add(id, nome, descricao, preco, imagem);
+                        dataGridViewMenu1.Rows.Add(id, nome, descricao, preco);
+
+                        var btnAdicionarAoCarrinho = new Button();
+                        btnAdicionarAoCarrinho.Text = "Adicionar ao Carrinho";
+                        btnAdicionarAoCarrinho.Click += (sender, e) => AdicionarAoCarrinhoClick(id, nome, descricao, preco);
+                        dataGridViewMenu1.Controls.Add(btnAdicionarAoCarrinho);
                     }
                 }
             }
         }
 
-        private Image ByteArrayToImage(byte[] byteArrayIn)
+        private void AdicionarAoCarrinhoClick(int id, string nome, string descricao, double preco)
         {
-            using (MemoryStream ms = new MemoryStream(byteArrayIn))
+            int itemID = id; 
+            ItemSacola item = new ItemSacola(id, nome, descricao, preco);
+            sacola.AdicionarItem(item);
+            AtualizarTotal();
+            
+        }
+    
+
+        private void AtualizarTotal()
+        {
+            double total = 0;
+
+            foreach (var itemNaSacola in sacola.Itens)
             {
-                Image image = Image.FromStream(ms);
-                return image;
+                total += itemNaSacola.Preco;
             }
+
+            lblTotal.Text = $"Total: R$ {total.ToString("F2")}";
         }
 
-        private void btnAdicionarSacola_Click(object sender, EventArgs e)
+        private void dataGridViewMenu1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataGridViewMenu1.SelectedRows.Count > 0)
-            {
-                DataGridViewRow selectedRow = dataGridViewMenu1.SelectedRows[0];
-                int id = Convert.ToInt32(selectedRow.Cells["ID"].Value);
-                string nome = selectedRow.Cells["Nome"].Value.ToString();
-                string descricao = selectedRow.Cells["Descricao"].Value.ToString();
-                double preco = Convert.ToDouble(selectedRow.Cells["Preco"].Value);
 
-                ItemSacola item = new ItemSacola(id, nome, descricao, preco);
+        }
 
-                bool itemExistente = false;
+        private void Tela_Cardapio_Usuario_Load(object sender, EventArgs e)
+        {
 
-                foreach (var itemNaSacola in sacola.Itens)
-                {
-                    if (itemNaSacola.Id == item.Id)
-                    {
-                        itemNaSacola.Quantidade++;
-                        itemExistente = true;
-                        break;
-                    }
-                }
-
-                if (!itemExistente)
-                {
-                    sacola.AdicionarItem(item);
-                }
-
-                double total = 0;
-
-                foreach (var itemNaSacola in sacola.Itens)
-                {
-                    total += itemNaSacola.Preco * itemNaSacola.Quantidade;
-                }
-
-                lblTotal.Text = $"Total: R$ {total.ToString("F2")}";
-            }
         }
 
         private void btnComanda_Click(object sender, EventArgs e)
         {
-            
-            Tela_Comandas telaComanda = new Tela_Comandas();
+            List<ItemSacola> itensCarrinho = sacola.Itens;
 
-            telaComanda.Sacola = sacola;
+            string connectionString = "Data Source=C:\\Users\\gabri\\source\\repos\\Projeto_Cafeteria\\Cafeteria_Carol\\Banco\\bd_cafeteria.db";
 
-            telaComanda.ShowDialog();
+            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+            {
+                connection.Open();
+
+                using (SQLiteTransaction transaction = connection.BeginTransaction())
+                {
+                    try
+                    {
+                        foreach (var item in itensCarrinho)
+                        {
+                            string insertQuery = "INSERT INTO Pedidos (ClienteID, ItemID, Quantidade, HoraPedido, Status) " +
+                                                "VALUES (@ClienteID, @ItemID, @Quantidade, @HoraPedido, @Status)";
+
+                            using (SQLiteCommand command = new SQLiteCommand(insertQuery, connection))
+                            {
+                                command.Parameters.AddWithValue("@ClienteID", 1);
+                                command.Parameters.AddWithValue("@ItemID", item);
+                                command.Parameters.AddWithValue("@Quantidade", item.Quantidade);
+                                command.Parameters.AddWithValue("@HoraPedido", DateTime.Now);
+                                command.Parameters.AddWithValue("@Status", "Pendente");
+
+                                command.ExecuteNonQuery();
+                            }
+                        }
+
+                        transaction.Commit();
+
+                        sacola.Limpar();
+                        AtualizarTotal();
+
+                        MessageBox.Show("Pedido realizado com sucesso!");
+                    }
+                    catch (Exception ex)
+                    {
+                        transaction.Rollback();
+
+                        MessageBox.Show("Erro ao fazer o pedido: " + ex.Message);
+                    }
+                }
+            }
         }
+
     }
-    }
+}
+
+

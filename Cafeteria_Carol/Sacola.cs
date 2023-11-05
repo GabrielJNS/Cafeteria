@@ -8,7 +8,7 @@ namespace Cafeteria_Carol
 {
     public class Sacola
     {
-        public List<ItemSacola> Itens { get; set; }
+        public List<ItemSacola> Itens { get; }
 
         public Sacola()
         {
@@ -17,19 +17,21 @@ namespace Cafeteria_Carol
 
         public void AdicionarItem(ItemSacola item)
         {
-            Itens.Add(item);
+            var itemExistente = Itens.FirstOrDefault(i => i.ID == item.ID);
+
+            if (itemExistente != null)
+            {
+                itemExistente.Quantidade++;
+            }
+            else
+            {
+                Itens.Add(item);
+            }
         }
 
-        public double CalcularTotal()
+        public void Limpar()
         {
-            double total = 0;
-
-            foreach (var item in Itens)
-            {
-                total += item.Preco * item.Quantidade;
-            }
-
-            return total;
+            Itens.Clear();
         }
     }
 }

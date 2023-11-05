@@ -7,15 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SQLite;
+
 
 namespace Cafeteria_Carol
 {
     public partial class Tela_Principal_Admin : Form
     {
-        public Tela_Principal_Admin()
+        
+
+        public Tela_Principal_Admin(string nomeUsuario)
         {
             InitializeComponent();
+
+            
+            lb_User.Text = "Bem-vindo, " + nomeUsuario;
         }
+
 
         private void bt_Gerenciar_Produtos_Click(object sender, EventArgs e)
         {
@@ -23,5 +31,26 @@ namespace Cafeteria_Carol
             novo.Show();
 
         }
+
+        private void lb_User_Click(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void Tela_Principal_Admin_Load(object sender, EventArgs e)
+        {
+
+          
+        }
+
+        private void bt_Cadastro_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void Tela_Principal_Usuario_Load(object sender, EventArgs e)
+        {
+        }
     }
 }
+

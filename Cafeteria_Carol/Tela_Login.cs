@@ -14,11 +14,14 @@ namespace Cafeteria_Carol
 {
     public partial class Tela_Login : Form
     {
+
+        public static string NomeUsuarioLogado { get; private set; }
+
         public Tela_Login()
         {
             InitializeComponent();
             CriarTabelaCardapio();
-
+            CriarTabelaPedidos();
         }
 
         private void Logar_Load(object sender, EventArgs e)
@@ -57,9 +60,9 @@ namespace Cafeteria_Carol
             string email = textbox_logemail.Text;
             string senha = textBox_logsenha.Text;
 
+            string nomeUsuario = email;
+
             string connectionString = "Data Source=C:\\Users\\gabri\\source\\repos\\Projeto_Cafeteria\\Cafeteria_Carol\\Banco\\bd_cafeteria.db";
-
-
             using (SQLiteConnection connection = new SQLiteConnection(connectionString))
             {
                 connection.Open();
@@ -73,48 +76,46 @@ namespace Cafeteria_Carol
 
                     int nivel = Convert.ToInt32(command.ExecuteScalar());
 
-
-
                     if (nivel > 0)
                     {
-
                         if (email.EndsWith("hotmail.com") || email.EndsWith("gmail.com"))
                         {
                             nivel = 1;
-                            MessageBox.Show($"usuario {email} login bem-sucedido!");
-                            Tela_Principal_Usuario novo = new Tela_Principal_Usuario();
+                            MessageBox.Show($"Usuário {email} login bem-sucedido!");
+                            NomeUsuarioLogado = nomeUsuario; 
+
+                            Tela_Principal_Usuario novo = new Tela_Principal_Usuario(nomeUsuario);
                             novo.Show();
-
-
                         }
                         else if (email.EndsWith("@atendente.com"))
                         {
                             nivel = 2;
-                            MessageBox.Show($"atendente {email} login bem-sucedido!");
-                            Tela_Principal_Atendente novo = new Tela_Principal_Atendente();
+                            MessageBox.Show($"Atendente {email} login bem-sucedido!");
+                            NomeUsuarioLogado = nomeUsuario;
+
+                            Tela_Principal_Atendente novo = new Tela_Principal_Atendente(nomeUsuario);
                             novo.Show();
                         }
                         else if (email.EndsWith("@admin.com"))
                         {
                             nivel = 3;
-                            MessageBox.Show($"admin {email} login bem-sucedido!");
-                            Tela_Principal_Admin novo = new Tela_Principal_Admin();
+                            MessageBox.Show($"Admin {email} login bem-sucedido!");
+                            NomeUsuarioLogado = nomeUsuario; 
+
+                            Tela_Principal_Admin novo = new Tela_Principal_Admin(nomeUsuario);
                             novo.Show();
-
-                        };
-
+                        }
                     }
-
                     else
                     {
                         MessageBox.Show("Email ou senha incorretos. Tente novamente.");
                     }
                     MessageBox.Show("Nível: " + nivel);
-
                 }
             }
-
         }
+
+
         private void CriarTabelaCardapio()
         {
             string connectionString = "Data Source=C:\\Users\\gabri\\source\\repos\\Projeto_Cafeteria\\Cafeteria_Carol\\Banco\\bd_cafeteria.db";
@@ -139,6 +140,33 @@ namespace Cafeteria_Carol
                 }
             }
         }
+        
+            public void CriarTabelaPedidos()
+            {
+                string connectionString = "Data Source=C:\\Users\\gabri\\source\\repos\\Projeto_Cafeteria\\Cafeteria_Carol\\Banco\\bd_cafeteria.db";
+
+                using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+                {
+                    connection.Open();
+
+                    using (SQLiteCommand command = new SQLiteCommand(connection))
+                    {
+                        command.CommandText = @"
+                        CREATE TABLE IF NOT EXISTS Pedidos (
+                            PedidoID INTEGER PRIMARY KEY AUTOINCREMENT,
+                            ClienteID INTEGER,
+                            ItemID INTEGER,
+                            Quantidade INTEGER,
+                            HoraPedido DATETIME,
+                            Status TEXT
+                        );
+                    ";
+
+                        command.ExecuteNonQuery();
+                    }
+                }
+            }
+        
 
         private void textBox_logsenha_TextChanged(object sender, EventArgs e)
         {
@@ -149,5 +177,6 @@ namespace Cafeteria_Carol
         {
 
         }
+
     }
 }

@@ -196,6 +196,11 @@ namespace Cafeteria_Carol
             string pattern = @"^\d{2}/\d{2}/\d{4}$";
             return Regex.IsMatch(data, pattern);
         }
+
+        private void Tela_Cadastro_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
         
