@@ -133,7 +133,7 @@ namespace Cafeteria_Carol
             // 
             // Fotos_Enviar
             // 
-            this.Fotos_Enviar.Location = new System.Drawing.Point(249, 44);
+            this.Fotos_Enviar.Location = new System.Drawing.Point(427, 31);
             this.Fotos_Enviar.Name = "Fotos_Enviar";
             this.Fotos_Enviar.Size = new System.Drawing.Size(100, 71);
             this.Fotos_Enviar.TabIndex = 10;

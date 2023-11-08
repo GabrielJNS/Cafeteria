@@ -101,7 +101,7 @@ namespace Cafeteria_Carol
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(675, 315);
+            this.lblTotal.Location = new System.Drawing.Point(744, 245);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(35, 13);
             this.lblTotal.TabIndex = 7;
@@ -109,16 +109,17 @@ namespace Cafeteria_Carol
             // 
             // btnAdicionarSacola
             // 
-            this.btnAdicionarSacola.Location = new System.Drawing.Point(431, 357);
+            this.btnAdicionarSacola.Location = new System.Drawing.Point(713, 77);
             this.btnAdicionarSacola.Name = "btnAdicionarSacola";
             this.btnAdicionarSacola.Size = new System.Drawing.Size(123, 54);
             this.btnAdicionarSacola.TabIndex = 8;
             this.btnAdicionarSacola.Text = "add item";
             this.btnAdicionarSacola.UseVisualStyleBackColor = true;
+            this.btnAdicionarSacola.Click += new System.EventHandler(this.btnAdicionarSacola_Click);
             // 
             // btnComanda
             // 
-            this.btnComanda.Location = new System.Drawing.Point(227, 357);
+            this.btnComanda.Location = new System.Drawing.Point(679, 165);
             this.btnComanda.Name = "btnComanda";
             this.btnComanda.Size = new System.Drawing.Size(157, 45);
             this.btnComanda.TabIndex = 9;

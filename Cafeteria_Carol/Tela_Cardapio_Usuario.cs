@@ -30,6 +30,15 @@ namespace Cafeteria_Carol
                     DataTable cardapioTable = new DataTable();
                     adapter.Fill(cardapioTable);
 
+                    if (dataGridViewMenu1.Columns.Count == 0)
+                    {
+                        dataGridViewMenu1.Columns.Add("ID", "ID");
+                        dataGridViewMenu1.Columns.Add("Nome", "Nome");
+                        dataGridViewMenu1.Columns.Add("Descricao", "Descrição");
+                        dataGridViewMenu1.Columns.Add("Preco", "Preço");
+                        dataGridViewMenu1.Columns.Add(new DataGridViewButtonColumn() { Name = "Adicionar", Text = "Adicionar ao Carrinho", UseColumnTextForButtonValue = true });
+                    }
+
                     foreach (DataRow row in cardapioTable.Rows)
                     {
                         int id = Convert.ToInt32(row["ID"]);
@@ -38,11 +47,6 @@ namespace Cafeteria_Carol
                         double preco = Convert.ToDouble(row["Preco"]);
 
                         dataGridViewMenu1.Rows.Add(id, nome, descricao, preco);
-
-                        var btnAdicionarAoCarrinho = new Button();
-                        btnAdicionarAoCarrinho.Text = "Adicionar ao Carrinho";
-                        btnAdicionarAoCarrinho.Click += (sender, e) => AdicionarAoCarrinhoClick(id, nome, descricao, preco);
-                        dataGridViewMenu1.Controls.Add(btnAdicionarAoCarrinho);
                     }
                 }
             }
@@ -72,8 +76,14 @@ namespace Cafeteria_Carol
 
         private void dataGridViewMenu1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            dataGridViewMenu1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
+            if (e.ColumnIndex == dataGridViewMenu1.Columns["Adicionar"].Index && e.RowIndex >= 0)
+            {
+                btnAdicionarSacola_Click(sender, e);
+            }
         }
+    
 
         private void Tela_Cardapio_Usuario_Load(object sender, EventArgs e)
         {
@@ -128,7 +138,26 @@ namespace Cafeteria_Carol
             }
         }
 
+        private void btnAdicionarSacola_Click(object sender, EventArgs e)
+        {
+            int rowIndex = dataGridViewMenu1.CurrentCell.RowIndex;
+
+            int id = Convert.ToInt32(dataGridViewMenu1.Rows[rowIndex].Cells[0].Value);
+            string nome = dataGridViewMenu1.Rows[rowIndex].Cells[1].Value.ToString();
+            string descricao = dataGridViewMenu1.Rows[rowIndex].Cells[2].Value.ToString();
+            double preco = Convert.ToDouble(dataGridViewMenu1.Rows[rowIndex].Cells[3].Value);
+
+            ItemSacola item = new ItemSacola(id, nome, descricao, preco);
+
+            AdicionarAoCarrinhoClick(item);
+        }
+        private void AdicionarAoCarrinhoClick(ItemSacola item)
+        {
+            sacola.AdicionarItem(item);
+            AtualizarTotal(); ;
+        }
     }
-}
+    }
+
 
 
