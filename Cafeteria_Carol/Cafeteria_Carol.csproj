@@ -66,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Banco.cs" />
+    <Compile Include="ConfiguracaoBanco.cs" />
     <Compile Include="Pedidos.cs" />
     <Compile Include="ItemSacola.cs" />
     <Compile Include="Sacola.cs" />

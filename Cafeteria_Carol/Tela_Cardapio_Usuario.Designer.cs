@@ -106,6 +106,7 @@ namespace Cafeteria_Carol
             this.lblTotal.Size = new System.Drawing.Size(35, 13);
             this.lblTotal.TabIndex = 7;
             this.lblTotal.Text = "label1";
+            this.lblTotal.Click += new System.EventHandler(this.lblTotal_Click);
             // 
             // btnAdicionarSacola
             // 

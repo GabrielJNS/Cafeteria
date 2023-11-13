@@ -158,6 +158,7 @@ namespace Cafeteria_Carol
             this.Controls.Add(this.bt_AdicionarProduto);
             this.Name = "Tela_Gerenciar_Produtos";
             this.Text = "Tela_Gerenciar_Produtos";
+            this.Load += new System.EventHandler(this.Tela_Gerenciar_Produtos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Fotos_Enviar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

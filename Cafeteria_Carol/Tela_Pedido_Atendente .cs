@@ -13,7 +13,7 @@ namespace Cafeteria_Carol
             CarregarPedidosPendentes();
         }
 
-        private string connectionString = "Data Source=C:\\Users\\gabri\\source\\repos\\Projeto_Cafeteria\\Cafeteria_Carol\\Banco\\bd_cafeteria.db";
+        private string connectionString = ConfiguracaoBanco.CaminhoBanco;
 
         private void CarregarPedidosPendentes()
         {
@@ -89,6 +89,11 @@ namespace Cafeteria_Carol
                 MarcarPedidoComoConcluido(pedidoID);
                 CarregarPedidosPendentes();
             }
+        }
+
+        private void Tela_Pedido_Atendente_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

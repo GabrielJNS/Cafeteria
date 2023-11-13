@@ -14,7 +14,7 @@ namespace Cafeteria_Carol
 
         private static SQLiteConnection ConexaoBanco()
         {
-            conexao = new SQLiteConnection("Data Source=C:\\Users\\gabri\\source\\repos\\Projeto_Cafeteria\\Cafeteria_Carol\\Banco\\bd_cafeteria.db");
+            conexao = new SQLiteConnection(ConfiguracaoBanco.CaminhoBanco);
             conexao.Open();
             return conexao;
         }
@@ -33,9 +33,8 @@ namespace Cafeteria_Carol
                     ConexaoBanco().Close();
                     return dt;
                 }
-
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 ConexaoBanco().Close();
                 throw ex;
@@ -56,14 +55,12 @@ namespace Cafeteria_Carol
                     ConexaoBanco().Close();
                     return dt;
                 }
-
             }
             catch (Exception ex)
             {
                 ConexaoBanco().Close();
                 throw ex;
             }
-
         }
     }
 }

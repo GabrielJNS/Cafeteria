@@ -14,6 +14,7 @@ namespace Cafeteria_Carol
 {
     public partial class Tela_Login : Form
     {
+        private string connectionString = ConfiguracaoBanco.CaminhoBanco;
 
         public static string NomeUsuarioLogado { get; private set; }
 
@@ -62,8 +63,7 @@ namespace Cafeteria_Carol
 
             string nomeUsuario = email;
 
-            string connectionString = "Data Source=C:\\Users\\gabri\\source\\repos\\Projeto_Cafeteria\\Cafeteria_Carol\\Banco\\bd_cafeteria.db";
-            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+            using (SQLiteConnection connection = new SQLiteConnection(ConfiguracaoBanco.CaminhoBanco)) 
             {
                 connection.Open();
 
@@ -118,9 +118,8 @@ namespace Cafeteria_Carol
 
         private void CriarTabelaCardapio()
         {
-            string connectionString = "Data Source=C:\\Users\\gabri\\source\\repos\\Projeto_Cafeteria\\Cafeteria_Carol\\Banco\\bd_cafeteria.db";
 
-            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+            using (SQLiteConnection connection = new SQLiteConnection(ConfiguracaoBanco.CaminhoBanco))
             {
                 connection.Open();
 
@@ -143,11 +142,10 @@ namespace Cafeteria_Carol
         
             public void CriarTabelaPedidos()
             {
-                string connectionString = "Data Source=C:\\Users\\gabri\\source\\repos\\Projeto_Cafeteria\\Cafeteria_Carol\\Banco\\bd_cafeteria.db";
 
-                using (SQLiteConnection connection = new SQLiteConnection(connectionString))
-                {
-                    connection.Open();
+            using (SQLiteConnection connection = new SQLiteConnection(ConfiguracaoBanco.CaminhoBanco)) 
+            {
+                connection.Open();
 
                     using (SQLiteCommand command = new SQLiteCommand(connection))
                     {

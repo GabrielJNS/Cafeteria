@@ -8,7 +8,7 @@ namespace Cafeteria_Carol
 {
     public partial class Tela_Cardapio_Usuario : Form
     {
-        private string connectionString = "Data Source=C:\\Users\\gabri\\source\\repos\\Projeto_Cafeteria\\Cafeteria_Carol\\Banco\\bd_cafeteria.db";
+        private string connectionString = ConfiguracaoBanco.CaminhoBanco; 
         private Sacola sacola = new Sacola();
 
 
@@ -155,6 +155,11 @@ namespace Cafeteria_Carol
         {
             sacola.AdicionarItem(item);
             AtualizarTotal(); ;
+        }
+
+        private void lblTotal_Click(object sender, EventArgs e)
+        {
+
         }
     }
     }

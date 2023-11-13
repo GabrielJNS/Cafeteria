@@ -30,13 +30,13 @@ namespace Cafeteria_Carol
         private void InitializeComponent()
         {
             this.dataGridViewPedidos = new System.Windows.Forms.DataGridView();
-            this.btnPedidoAtendido = new System.Windows.Forms.Button();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnPedidoAtendido = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPedidos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -55,16 +55,6 @@ namespace Cafeteria_Carol
             this.dataGridViewPedidos.Size = new System.Drawing.Size(643, 150);
             this.dataGridViewPedidos.TabIndex = 0;
             this.dataGridViewPedidos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPedidos_CellContentClick);
-            // 
-            // btnPedidoAtendido
-            // 
-            this.btnPedidoAtendido.Location = new System.Drawing.Point(482, 307);
-            this.btnPedidoAtendido.Name = "btnPedidoAtendido";
-            this.btnPedidoAtendido.Size = new System.Drawing.Size(75, 23);
-            this.btnPedidoAtendido.TabIndex = 1;
-            this.btnPedidoAtendido.Text = "button1";
-            this.btnPedidoAtendido.UseVisualStyleBackColor = true;
-            this.btnPedidoAtendido.Click += new System.EventHandler(this.btnPedidoAtendido_Click);
             // 
             // Column1
             // 
@@ -96,6 +86,16 @@ namespace Cafeteria_Carol
             this.Column6.HeaderText = "Status";
             this.Column6.Name = "Column6";
             // 
+            // btnPedidoAtendido
+            // 
+            this.btnPedidoAtendido.Location = new System.Drawing.Point(482, 307);
+            this.btnPedidoAtendido.Name = "btnPedidoAtendido";
+            this.btnPedidoAtendido.Size = new System.Drawing.Size(75, 23);
+            this.btnPedidoAtendido.TabIndex = 1;
+            this.btnPedidoAtendido.Text = "button1";
+            this.btnPedidoAtendido.UseVisualStyleBackColor = true;
+            this.btnPedidoAtendido.Click += new System.EventHandler(this.btnPedidoAtendido_Click);
+            // 
             // Tela_Pedido_Atendente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -105,6 +105,7 @@ namespace Cafeteria_Carol
             this.Controls.Add(this.dataGridViewPedidos);
             this.Name = "Tela_Pedido_Atendente";
             this.Text = "Tela_Pedido_Atendente";
+            this.Load += new System.EventHandler(this.Tela_Pedido_Atendente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPedidos)).EndInit();
             this.ResumeLayout(false);
 

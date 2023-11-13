@@ -16,5 +16,10 @@ namespace Cafeteria_Carol
         {
             InitializeComponent();
         }
+
+        private void Tela_Resumo_Pedido_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
