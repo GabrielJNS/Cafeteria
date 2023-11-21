@@ -62,7 +62,7 @@ namespace Cafeteria_Carol
             this.bt_Cadastro.Name = "bt_Cadastro";
             this.bt_Cadastro.Size = new System.Drawing.Size(189, 74);
             this.bt_Cadastro.TabIndex = 4;
-            this.bt_Cadastro.Text = "Cadastrar Funcionário";
+            this.bt_Cadastro.Text = "Cadastrar e Modificar Funcionário";
             this.bt_Cadastro.UseVisualStyleBackColor = true;
             this.bt_Cadastro.Click += new System.EventHandler(this.bt_Cadastro_Click);
             // 

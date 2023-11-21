@@ -12,7 +12,8 @@ namespace Cafeteria_Carol
 {
     public partial class Tela_Principal_Atendente : Form
     {
-      
+
+        string nomeUsuario = Tela_Cadastro.NomeUsuarioCadastrado;
 
         public Tela_Principal_Atendente(string nomeUsuario)
         {

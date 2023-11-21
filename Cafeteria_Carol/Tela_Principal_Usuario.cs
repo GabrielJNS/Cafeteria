@@ -10,9 +10,13 @@ using System.Windows.Forms;
 
 namespace Cafeteria_Carol
 {
+
     public partial class Tela_Principal_Usuario : Form
     {
-        
+        string nomeUsuario = Tela_Cadastro.NomeUsuarioCadastrado;
+
+        private List<Pedido> ListaDePedidos = new List<Pedido>(); 
+
 
         public Tela_Principal_Usuario(string nomeUsuario)
         {
@@ -40,7 +44,7 @@ namespace Cafeteria_Carol
 
         private void bt_ResumoPedido_Click(object sender, EventArgs e)
         {
-            Tela_Resumo_Pedido novo = new Tela_Resumo_Pedido();
+            Tela_Resumo_Pedido novo = new Tela_Resumo_Pedido(ListaDePedidos);
             novo.Show();
         }
 
@@ -60,6 +64,11 @@ namespace Cafeteria_Carol
         }
         private void Tela_Principal_Usuario_Load(object sender, EventArgs e)
         {
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

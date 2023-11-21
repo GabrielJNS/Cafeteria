@@ -16,12 +16,14 @@ namespace Cafeteria_Carol
 
     public partial class Tela_Cadastro : Form
     {
+        public static string NomeUsuarioCadastrado { get; private set; }
 
 
         public Tela_Cadastro()
         {
             InitializeComponent();
             CriarTabelaUsuarios();
+            MessageBox.Show($"Nome do usuário ao carregar cardápio: {NomeUsuarioCadastrado}");
 
         }
 
@@ -114,7 +116,7 @@ namespace Cafeteria_Carol
             }
 
 
-            //Conector
+            
 
             using (SQLiteConnection connection = new SQLiteConnection(ConfiguracaoBanco.CaminhoBanco)) 
             {
@@ -136,6 +138,7 @@ namespace Cafeteria_Carol
 
                     command.ExecuteNonQuery();
 
+                    NomeUsuarioCadastrado = nome; 
                     MessageBox.Show("Cadastro realizado com sucesso!");
                     Close();
                 }
@@ -152,14 +155,14 @@ namespace Cafeteria_Carol
                 using (SQLiteCommand command = new SQLiteCommand(connection))
                 {
                     command.CommandText = @"
-                        CREATE TABLE IF NOT EXISTS Usuarios (
-                            ID INTEGER PRIMARY KEY AUTOINCREMENT,
-                            Nome TEXT,
-                            Email TEXT,
-                            Senha TEXT,
-                            Telefone TEXT,
-                            DataNascimento DATE,
-                            Nivel INTEGER
+                    CREATE TABLE IF NOT EXISTS Usuarios (
+                    ID INTEGER PRIMARY KEY AUTOINCREMENT,
+                    Nome TEXT,
+                    Email TEXT,
+                    Senha TEXT,
+                    Telefone TEXT,
+                    DataNascimento TEXT,
+                    Nivel INTEGER
 
                         );
                     ";
@@ -195,6 +198,11 @@ namespace Cafeteria_Carol
         }
 
         private void Tela_Cadastro_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void campo_Senha_TextChanged(object sender, EventArgs e)
         {
 
         }

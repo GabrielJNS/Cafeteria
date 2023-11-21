@@ -1,26 +1,19 @@
-﻿using System.Globalization;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using System;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 using System.Data.SQLite;
+using System.Globalization;
+using System.Windows.Forms;
 
 namespace Cafeteria_Carol
 {
-        
-        public partial class Tela_Gerenciar_Produtos : Form
-        {
-        private string connectionString = ConfiguracaoBanco.CaminhoBanco; 
+    public partial class Tela_Gerenciar_Produtos : Form
+    {
+        private string connectionString = ConfiguracaoBanco.CaminhoBanco;
 
         public Tela_Gerenciar_Produtos()
-            {
-                InitializeComponent();
-            }
+        {
+            InitializeComponent();
+        }
 
         private void bt_AdicionarProduto_Click(object sender, EventArgs e)
         {
@@ -38,21 +31,43 @@ namespace Cafeteria_Carol
             }
         }
 
-
-
-        private void bt_ExcluirProduto_Click(object sender, EventArgs e)
+        private void bt_ModificarProduto_Click(object sender, EventArgs e)
+        {
+            int produtoId;
+            if (int.TryParse(txtIDProduto.Text, out produtoId))
             {
-                int produtoId;
-                if (int.TryParse(txtIDProduto.Text, out produtoId))
+                string nome = txtNomeProduto.Text;
+                string descricao = txtDescricaoProduto.Text;
+                decimal preco;
+
+                if (decimal.TryParse(txtPrecoProduto.Text, NumberStyles.Currency, CultureInfo.GetCultureInfo("pt-BR"), out preco))
                 {
-                    ExcluirProduto(produtoId);
-                    MessageBox.Show("Produto excluído com sucesso!");
+                    ModificarProduto(produtoId, nome, descricao, preco, null);
                 }
                 else
                 {
-                    MessageBox.Show("ID de produto inválido. Certifique-se de inserir um número inteiro válido.");
+                    MessageBox.Show("Preço inválido. Certifique-se de inserir um valor numérico válido.");
                 }
             }
+            else
+            {
+                MessageBox.Show("ID de produto inválido. Certifique-se de inserir um número inteiro válido.");
+            }
+        }
+
+        private void bt_ExcluirProduto_Click(object sender, EventArgs e)
+        {
+            int produtoId;
+            if (int.TryParse(txtIDProduto.Text, out produtoId))
+            {
+                ExcluirProduto(produtoId);
+                MessageBox.Show("Produto excluído com sucesso!");
+            }
+            else
+            {
+                MessageBox.Show("ID de produto inválido. Certifique-se de inserir um número inteiro válido.");
+            }
+        }
 
         private void AdicionarProduto(string nome, string descricao, decimal preco, byte[] imagem)
         {
@@ -85,12 +100,40 @@ namespace Cafeteria_Carol
             }
         }
 
-        private void LimparCampos()
+        private void ModificarProduto(int produtoId, string nome, string descricao, decimal preco, byte[] imagem)
         {
-            txtNomeProduto.Text = string.Empty;
-            txtDescricaoProduto.Text = string.Empty;
-            txtPrecoProduto.Text = string.Empty;
-            txtIDProduto.Text = string.Empty;
+            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+
+                    if (ProdutoExiste(produtoId, connection))
+                    {
+                        string sql = "UPDATE Cardapio SET Nome = @Nome, Descricao = @Descricao, Preco = @Preco, Imagem = @Imagem WHERE ID = @ID";
+
+                        using (SQLiteCommand command = new SQLiteCommand(sql, connection))
+                        {
+                            command.Parameters.AddWithValue("@ID", produtoId);
+                            command.Parameters.AddWithValue("@Nome", nome);
+                            command.Parameters.AddWithValue("@Descricao", descricao);
+                            command.Parameters.AddWithValue("@Preco", preco);
+                            command.Parameters.AddWithValue("@Imagem", imagem);
+
+                            command.ExecuteNonQuery();
+                            MessageBox.Show("Produto modificado com sucesso!");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("O produto com ID " + produtoId + " não existe.");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro ao modificar o produto: " + ex.Message);
+                }
+            }
         }
 
         private void ExcluirProduto(int produtoId)
@@ -135,6 +178,14 @@ namespace Cafeteria_Carol
 
                 return count > 0;
             }
+        }
+
+        private void LimparCampos()
+        {
+            txtNomeProduto.Text = string.Empty;
+            txtDescricaoProduto.Text = string.Empty;
+            txtPrecoProduto.Text = string.Empty;
+            txtIDProduto.Text = string.Empty;
         }
 
         private void txtNomeProduto_TextChanged(object sender, EventArgs e)

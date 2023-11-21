@@ -21,6 +21,7 @@ namespace Cafeteria_Carol
 
             if (itemExistente != null)
             {
+                itemExistente.Quantidade += item.Quantidade;
             }
             else
             {

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
+using System.Linq;
+
 
 namespace Cafeteria_Carol
 {
@@ -7,6 +9,17 @@ namespace Cafeteria_Carol
     {
         public Sacola Sacola { get; set; }
 
+        private double ConsultarValorAPagar()
+        {
+            double total = 0;
+
+            foreach (var item in Sacola.Itens)
+            {
+                total += item.Subtotal;
+            }
+
+            return total;
+        }
         public Tela_Comandas()
         {
             InitializeComponent();
@@ -28,17 +41,21 @@ namespace Cafeteria_Carol
             {
                 foreach (var item in Sacola.Itens)
                 {
-                    dataGridViewComandas.Rows.Add(item.Nome, item.Descricao, item.Preco, item.Quantidade);
+                    dataGridViewComandas.Rows.Add(item.Nome, item.Quantidade, item.Preco, item.Subtotal);
                 }
 
-                double total = 0;
-                foreach (var item in Sacola.Itens)
-                {
-                    total += item.Preco * item.Quantidade;
-                }
+                double total = Sacola.Itens.Sum(item => item.Subtotal);
 
                 lblTotal.Text = $"Total: R$ {total.ToString("F2")}";
             }
+        }
+
+        private void btnPagamento_Click(object sender, EventArgs e)
+        {
+            double valorAPagar = ConsultarValorAPagar();
+
+            MessageBox.Show($"Total a pagar: R$ {valorAPagar.ToString("F2")}", "Pagamento", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
         }
 
         private void dataGridViewComandas_CellContentClick(object sender, DataGridViewCellEventArgs e)

@@ -29,6 +29,7 @@ namespace Cafeteria_Carol
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Tela_Login));
             this.bt_entrar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.textbox_logemail = new System.Windows.Forms.TextBox();
@@ -43,7 +44,7 @@ namespace Cafeteria_Carol
             // 
             this.bt_entrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bt_entrar.Location = new System.Drawing.Point(267, 195);
-            this.bt_entrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bt_entrar.Margin = new System.Windows.Forms.Padding(2);
             this.bt_entrar.Name = "bt_entrar";
             this.bt_entrar.Size = new System.Drawing.Size(50, 24);
             this.bt_entrar.TabIndex = 0;
@@ -66,7 +67,7 @@ namespace Cafeteria_Carol
             // textbox_logemail
             // 
             this.textbox_logemail.Location = new System.Drawing.Point(202, 104);
-            this.textbox_logemail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textbox_logemail.Margin = new System.Windows.Forms.Padding(2);
             this.textbox_logemail.Name = "textbox_logemail";
             this.textbox_logemail.Size = new System.Drawing.Size(182, 20);
             this.textbox_logemail.TabIndex = 2;
@@ -98,7 +99,7 @@ namespace Cafeteria_Carol
             // textBox_logsenha
             // 
             this.textBox_logsenha.Location = new System.Drawing.Point(202, 148);
-            this.textBox_logsenha.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox_logsenha.Margin = new System.Windows.Forms.Padding(2);
             this.textBox_logsenha.Name = "textBox_logsenha";
             this.textBox_logsenha.Size = new System.Drawing.Size(185, 20);
             this.textBox_logsenha.TabIndex = 5;
@@ -119,7 +120,7 @@ namespace Cafeteria_Carol
             // 
             this.bt_cadastrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bt_cadastrar.Location = new System.Drawing.Point(302, 236);
-            this.bt_cadastrar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.bt_cadastrar.Margin = new System.Windows.Forms.Padding(2);
             this.bt_cadastrar.Name = "bt_cadastrar";
             this.bt_cadastrar.Size = new System.Drawing.Size(83, 28);
             this.bt_cadastrar.TabIndex = 7;
@@ -140,6 +141,8 @@ namespace Cafeteria_Carol
             this.Controls.Add(this.textbox_logemail);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.bt_entrar);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Tela_Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Logar";

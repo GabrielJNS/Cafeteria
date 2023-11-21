@@ -10,12 +10,18 @@ namespace Cafeteria_Carol
     {
         private string connectionString = ConfiguracaoBanco.CaminhoBanco; 
         private Sacola sacola = new Sacola();
+        string nomeDoUsuario = Tela_Login.NomeUsuarioLogado;
+        string nomeUsuario = Tela_Cadastro.NomeUsuarioCadastrado;
+
 
 
         public Tela_Cardapio_Usuario()
         {
             InitializeComponent();
+            this.nomeUsuario = nomeUsuario;
             CarregarItensCardapio();
+            MessageBox.Show($"Nome do usuário ao carregar cardápio: {nomeUsuario}");
+
         }
 
         private void CarregarItensCardapio()
@@ -58,9 +64,11 @@ namespace Cafeteria_Carol
             ItemSacola item = new ItemSacola(id, nome, descricao, preco);
             sacola.AdicionarItem(item);
             AtualizarTotal();
-            
+            MessageBox.Show($"Item '{nome}' adicionado à sacola!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
         }
-    
+
 
         private void AtualizarTotal()
         {
@@ -68,13 +76,13 @@ namespace Cafeteria_Carol
 
             foreach (var itemNaSacola in sacola.Itens)
             {
-                total += itemNaSacola.Preco;
+                total += itemNaSacola.Preco * itemNaSacola.Quantidade;
             }
 
             lblTotal.Text = $"Total: R$ {total.ToString("F2")}";
         }
 
-        private void dataGridViewMenu1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+            private void dataGridViewMenu1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             dataGridViewMenu1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
@@ -93,8 +101,8 @@ namespace Cafeteria_Carol
         private void btnComanda_Click(object sender, EventArgs e)
         {
             List<ItemSacola> itensCarrinho = sacola.Itens;
+            MessageBox.Show($"Nome do usuário ao clicar no botão 'Comanda': {nomeUsuario}");
 
-            string connectionString = "Data Source=C:\\Users\\gabri\\source\\repos\\Projeto_Cafeteria\\Cafeteria_Carol\\Banco\\bd_cafeteria.db";
 
             using (SQLiteConnection connection = new SQLiteConnection(connectionString))
             {
@@ -106,13 +114,13 @@ namespace Cafeteria_Carol
                     {
                         foreach (var item in itensCarrinho)
                         {
-                            string insertQuery = "INSERT INTO Pedidos (ClienteID, ItemID, Quantidade, HoraPedido, Status) " +
-                                                "VALUES (@ClienteID, @ItemID, @Quantidade, @HoraPedido, @Status)";
+                            string insertQuery = "INSERT INTO Pedidos (NomeCliente, NomeProduto, Quantidade, HoraPedido, Status) " +
+                                 "VALUES (@NomeCliente, @NomeProduto, @Quantidade, @HoraPedido, @Status)";
 
                             using (SQLiteCommand command = new SQLiteCommand(insertQuery, connection))
                             {
-                                command.Parameters.AddWithValue("@ClienteID", 1);
-                                command.Parameters.AddWithValue("@ItemID", item);
+                                command.Parameters.AddWithValue("@NomeCliente", nomeDoUsuario);
+                                command.Parameters.AddWithValue("@NomeProduto", item.Nome);
                                 command.Parameters.AddWithValue("@Quantidade", item.Quantidade);
                                 command.Parameters.AddWithValue("@HoraPedido", DateTime.Now);
                                 command.Parameters.AddWithValue("@Status", "Pendente");
@@ -154,12 +162,22 @@ namespace Cafeteria_Carol
         private void AdicionarAoCarrinhoClick(ItemSacola item)
         {
             sacola.AdicionarItem(item);
-            AtualizarTotal(); ;
+            AtualizarTotal();
         }
 
         private void lblTotal_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnAdicionarAoCarrinho_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRecarregar_Click(object sender, EventArgs e)
+        {
+            dataGridViewMenu1.Refresh();
         }
     }
     }

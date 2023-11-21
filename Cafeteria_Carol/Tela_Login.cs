@@ -58,59 +58,56 @@ namespace Cafeteria_Carol
 
         public void Bt_entrar_Click(object sender, EventArgs e)
         {
-            string email = textbox_logemail.Text;
-            string senha = textBox_logsenha.Text;
 
-            string nomeUsuario = email;
 
-            using (SQLiteConnection connection = new SQLiteConnection(ConfiguracaoBanco.CaminhoBanco)) 
             {
-                connection.Open();
+                string email = textbox_logemail.Text;
+                string senha = textBox_logsenha.Text;
+                string nomeUsuario = email;
+                MessageBox.Show($"Nome do usuário ao entrar: {nomeUsuario}");
 
-                string query = "SELECT COUNT(*) FROM Usuarios WHERE Email = @Email AND Senha = @Senha";
-
-                using (SQLiteCommand command = new SQLiteCommand(query, connection))
+                using (SQLiteConnection connection = new SQLiteConnection(ConfiguracaoBanco.CaminhoBanco))
                 {
-                    command.Parameters.AddWithValue("@Email", email);
-                    command.Parameters.AddWithValue("@Senha", senha);
+                    connection.Open();
 
-                    int nivel = Convert.ToInt32(command.ExecuteScalar());
+                    string query = "SELECT Nivel FROM Usuarios WHERE Email = @Email AND Senha = @Senha";
 
-                    if (nivel > 0)
+                    using (SQLiteCommand command = new SQLiteCommand(query, connection))
                     {
-                        if (email.EndsWith("hotmail.com") || email.EndsWith("gmail.com"))
-                        {
-                            nivel = 1;
-                            MessageBox.Show($"Usuário {email} login bem-sucedido!");
-                            NomeUsuarioLogado = nomeUsuario; 
+                        command.Parameters.AddWithValue("@Email", email);
+                        command.Parameters.AddWithValue("@Senha", senha);
 
-                            Tela_Principal_Usuario novo = new Tela_Principal_Usuario(nomeUsuario);
-                            novo.Show();
+                        object result = command.ExecuteScalar();
+
+                        if (result != null)
+                        {
+                            int nivel = Convert.ToInt32(result);
+                            MessageBox.Show($"Login bem-sucedido! Nível: {nivel}");
+
+                            switch (nivel)
+                            {
+                                case 1:
+                                    NomeUsuarioLogado = email;
+                                    Tela_Principal_Usuario novoCliente = new Tela_Principal_Usuario(email);
+                                    novoCliente.Show();
+                                    break;
+                                case 2:
+                                    NomeUsuarioLogado = email;
+                                    Tela_Principal_Atendente novoAtendente = new Tela_Principal_Atendente(email);
+                                    novoAtendente.Show();
+                                    break;
+                                case 3:
+                                    NomeUsuarioLogado = email;
+                                    Tela_Principal_Admin novoAdmin = new Tela_Principal_Admin(email);
+                                    novoAdmin.Show();
+                                    break;
+                            }
                         }
-                        else if (email.EndsWith("@atendente.com"))
+                        else
                         {
-                            nivel = 2;
-                            MessageBox.Show($"Atendente {email} login bem-sucedido!");
-                            NomeUsuarioLogado = nomeUsuario;
-
-                            Tela_Principal_Atendente novo = new Tela_Principal_Atendente(nomeUsuario);
-                            novo.Show();
-                        }
-                        else if (email.EndsWith("@admin.com"))
-                        {
-                            nivel = 3;
-                            MessageBox.Show($"Admin {email} login bem-sucedido!");
-                            NomeUsuarioLogado = nomeUsuario; 
-
-                            Tela_Principal_Admin novo = new Tela_Principal_Admin(nomeUsuario);
-                            novo.Show();
+                            MessageBox.Show("Email ou senha incorretos. Tente novamente.");
                         }
                     }
-                    else
-                    {
-                        MessageBox.Show("Email ou senha incorretos. Tente novamente.");
-                    }
-                    MessageBox.Show("Nível: " + nivel);
                 }
             }
         }
@@ -139,32 +136,32 @@ namespace Cafeteria_Carol
                 }
             }
         }
-        
-            public void CriarTabelaPedidos()
-            {
 
-            using (SQLiteConnection connection = new SQLiteConnection(ConfiguracaoBanco.CaminhoBanco)) 
+        public void CriarTabelaPedidos()
+        {
+
+            using (SQLiteConnection connection = new SQLiteConnection(ConfiguracaoBanco.CaminhoBanco))
             {
                 connection.Open();
 
-                    using (SQLiteCommand command = new SQLiteCommand(connection))
-                    {
-                        command.CommandText = @"
-                        CREATE TABLE IF NOT EXISTS Pedidos (
-                            PedidoID INTEGER PRIMARY KEY AUTOINCREMENT,
-                            ClienteID INTEGER,
-                            ItemID INTEGER,
-                            Quantidade INTEGER,
-                            HoraPedido DATETIME,
-                            Status TEXT
-                        );
-                    ";
+                using (SQLiteCommand command = new SQLiteCommand(connection))
+                {
+                    command.CommandText = @"
+                   CREATE TABLE IF NOT EXISTS Pedidos (
+                    PedidoID INTEGER PRIMARY KEY AUTOINCREMENT,
+                    NomeCliente TEXT,
+                    NomeProduto TEXT, 
+                    Quantidade INTEGER,
+                    HoraPedido DATETIME,
+                    Status TEXT
+                );
+            ";
 
-                        command.ExecuteNonQuery();
-                    }
+                    command.ExecuteNonQuery();
                 }
             }
-        
+        }
+
 
         private void textBox_logsenha_TextChanged(object sender, EventArgs e)
         {
@@ -175,6 +172,30 @@ namespace Cafeteria_Carol
         {
 
         }
+        private string ObterNomeUsuario(string nome)
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(ConfiguracaoBanco.CaminhoBanco))
+            {
+                connection.Open();
 
+                string query = "SELECT Nome FROM Usuarios WHERE Nome = @Nome";
+
+                using (SQLiteCommand command = new SQLiteCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Nome", nome);
+
+                    object result = command.ExecuteScalar();
+
+                    if (result != null)
+                    {
+                        return result.ToString();
+                    }
+                    else
+                    {
+                        return string.Empty;
+                    }
+                }
+            }
+        }
     }
 }

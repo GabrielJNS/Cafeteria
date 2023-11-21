@@ -39,6 +39,7 @@ namespace Cafeteria_Carol
             this.lblTotal = new System.Windows.Forms.Label();
             this.btnAdicionarSacola = new System.Windows.Forms.Button();
             this.btnComanda = new System.Windows.Forms.Button();
+            this.btnRecarregar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMenu1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,6 +51,7 @@ namespace Cafeteria_Carol
             this.btnAdicionarAoCarrinho.TabIndex = 5;
             this.btnAdicionarAoCarrinho.Text = "Adicionar";
             this.btnAdicionarAoCarrinho.UseVisualStyleBackColor = true;
+            this.btnAdicionarAoCarrinho.Click += new System.EventHandler(this.btnAdicionarAoCarrinho_Click);
             // 
             // dataGridViewMenu1
             // 
@@ -128,11 +130,22 @@ namespace Cafeteria_Carol
             this.btnComanda.UseVisualStyleBackColor = true;
             this.btnComanda.Click += new System.EventHandler(this.btnComanda_Click);
             // 
+            // btnRecarregar
+            // 
+            this.btnRecarregar.Location = new System.Drawing.Point(713, 273);
+            this.btnRecarregar.Name = "btnRecarregar";
+            this.btnRecarregar.Size = new System.Drawing.Size(90, 38);
+            this.btnRecarregar.TabIndex = 10;
+            this.btnRecarregar.Text = "Recarregar";
+            this.btnRecarregar.UseVisualStyleBackColor = true;
+            this.btnRecarregar.Click += new System.EventHandler(this.btnRecarregar_Click);
+            // 
             // Tela_Cardapio_Usuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(926, 497);
+            this.Controls.Add(this.btnRecarregar);
             this.Controls.Add(this.btnComanda);
             this.Controls.Add(this.btnAdicionarSacola);
             this.Controls.Add(this.lblTotal);
@@ -160,5 +173,6 @@ namespace Cafeteria_Carol
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Button btnAdicionarSacola;
         private System.Windows.Forms.Button btnComanda;
+        private System.Windows.Forms.Button btnRecarregar;
     }
 }

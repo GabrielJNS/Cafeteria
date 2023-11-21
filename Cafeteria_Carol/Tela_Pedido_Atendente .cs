@@ -2,6 +2,7 @@
 using System.Data;
 using System.Data.SQLite;
 using System.Windows.Forms;
+using System.Collections.Generic;
 
 namespace Cafeteria_Carol
 {
@@ -14,13 +15,15 @@ namespace Cafeteria_Carol
         }
 
         private string connectionString = ConfiguracaoBanco.CaminhoBanco;
+        private Sacola sacola = new Sacola();
 
         private void CarregarPedidosPendentes()
         {
+
             using (SQLiteConnection connection = new SQLiteConnection(connectionString))
             {
                 connection.Open();
-                string query = "SELECT PedidoID, ClienteID, ItemID, Quantidade, HoraPedido FROM Pedidos WHERE Status = 'Pendente'";
+                string query = "SELECT PedidoID, NomeCliente, NomeProduto, Quantidade, HoraPedido, Status FROM Pedidos WHERE Status = 'Pendente'";
 
                 using (SQLiteDataAdapter adapter = new SQLiteDataAdapter(query, connection))
                 {
@@ -32,12 +35,12 @@ namespace Cafeteria_Carol
                     foreach (DataRow row in pedidosTable.Rows)
                     {
                         int pedidoID = Convert.ToInt32(row["PedidoID"]);
-                        int clienteID = Convert.ToInt32(row["ClienteID"]);
-                        int itemID = Convert.ToInt32(row["ItemID"]);
+                        string NomeCliente = row["NomeCliente"].ToString();
+                        string nomeProduto = row["NomeProduto"].ToString();
                         int quantidade = Convert.ToInt32(row["Quantidade"]);
                         DateTime horaPedido = Convert.ToDateTime(row["HoraPedido"]);
 
-                        dataGridViewPedidos.Rows.Add(pedidoID, clienteID, itemID, quantidade, horaPedido);
+                        dataGridViewPedidos.Rows.Add(pedidoID, NomeCliente, nomeProduto, quantidade, horaPedido);
                     }
                 }
             }
@@ -50,12 +53,40 @@ namespace Cafeteria_Carol
                 DataGridViewRow selectedRow = dataGridViewPedidos.Rows[e.RowIndex];
                 int pedidoID = Convert.ToInt32(selectedRow.Cells["PedidoID"].Value);
 
-                MarcarPedidoComoConcluido(pedidoID);
+                DialogResult result = MessageBox.Show("Deseja marcar este pedido como Pendente?", "Confirmação", MessageBoxButtons.YesNo);
 
-                CarregarPedidosPendentes();
+                if (result == DialogResult.Yes)
+                {
+                    MarcarPedidoComoPendente(pedidoID);
+
+                    CarregarPedidosPendentes();
+                }
             }
         }
+        private void MarcarPedidoComoPendente(int pedidoID)
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+            {
+                connection.Open();
+                string updateQuery = "UPDATE Pedidos SET Status = 'Pendente' WHERE PedidoID = @PedidoID";
 
+                using (SQLiteCommand command = new SQLiteCommand(updateQuery, connection))
+                {
+                    command.Parameters.AddWithValue("@PedidoID", pedidoID);
+
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    if (rowsAffected > 0)
+                    {
+                        MessageBox.Show("Pedido marcado como Pendente!");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Falha ao marcar o pedido como Pendente.");
+                    }
+                }
+            }
+        }
         private void MarcarPedidoComoConcluido(int pedidoID)
         {
             using (SQLiteConnection connection = new SQLiteConnection(connectionString))
@@ -80,18 +111,81 @@ namespace Cafeteria_Carol
                 }
             }
         }
-        private void btnPedidoAtendido_Click(object sender, EventArgs e)
+    
+
+
+        private void Tela_Pedido_Atendente_Load(object sender, EventArgs e)
         {
 
-            if (dataGridViewPedidos.SelectedRows.Count > 0)
+        }
+        private void AtualizarTotal()
+        {
+            double total = 0;
+
+            foreach (var itemNaSacola in sacola.Itens)
             {
-                int pedidoID = (int)dataGridViewPedidos.SelectedRows[0].Cells["PedidoID"].Value;
-                MarcarPedidoComoConcluido(pedidoID);
-                CarregarPedidosPendentes();
+                total += itemNaSacola.Preco * itemNaSacola.Quantidade;
+            }
+
+        }
+
+        private void btnRecarregar_Click(object sender, EventArgs e)
+        {
+            CarregarPedidosPendentes();
+        }
+
+        private void txtPedidoID_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnMarcarConcluido_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (int.TryParse(txtPedidoID.Text, out int pedidoID))
+                {
+                    RemoverPedidoDoBanco(pedidoID);
+
+                    CarregarPedidosPendentes();
+
+                    sacola.Limpar();
+                    AtualizarTotal();
+
+                    MessageBox.Show("Pedido marcado como concluído!");
+                }
+                else
+                {
+                    MessageBox.Show("Digite um valor válido para o PedidoID.");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao marcar o pedido como concluído: " + ex.Message);
+            }
+        }
+        private void RemoverPedidoDoBanco(int pedidoID)
+        {
+            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+            {
+                connection.Open();
+                string deleteQuery = "DELETE FROM Pedidos WHERE PedidoID = @PedidoID";
+
+                using (SQLiteCommand command = new SQLiteCommand(deleteQuery, connection))
+                {
+                    command.Parameters.AddWithValue("@PedidoID", pedidoID);
+
+                    int rowsAffected = command.ExecuteNonQuery();
+
+                    if (rowsAffected <= 0)
+                    {
+                        MessageBox.Show("Falha ao excluir o pedido do banco.");
+                    }
+                }
             }
         }
 
-        private void Tela_Pedido_Atendente_Load(object sender, EventArgs e)
+        private void btnPedidoAtendido_Click(object sender, EventArgs e)
         {
 
         }

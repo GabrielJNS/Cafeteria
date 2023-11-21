@@ -40,14 +40,15 @@ namespace Cafeteria_Carol
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.Fotos_Enviar = new System.Windows.Forms.PictureBox();
+            this.bt_ModificarProduto = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Fotos_Enviar)).BeginInit();
             this.SuspendLayout();
             // 
             // bt_AdicionarProduto
             // 
-            this.bt_AdicionarProduto.Location = new System.Drawing.Point(69, 301);
+            this.bt_AdicionarProduto.Location = new System.Drawing.Point(31, 300);
             this.bt_AdicionarProduto.Name = "bt_AdicionarProduto";
-            this.bt_AdicionarProduto.Size = new System.Drawing.Size(106, 38);
+            this.bt_AdicionarProduto.Size = new System.Drawing.Size(70, 38);
             this.bt_AdicionarProduto.TabIndex = 0;
             this.bt_AdicionarProduto.Text = "add";
             this.bt_AdicionarProduto.UseVisualStyleBackColor = true;
@@ -140,11 +141,22 @@ namespace Cafeteria_Carol
             this.Fotos_Enviar.TabStop = false;
             this.Fotos_Enviar.Click += new System.EventHandler(this.Fotos_Enviar_Click);
             // 
+            // bt_ModificarProduto
+            // 
+            this.bt_ModificarProduto.Location = new System.Drawing.Point(133, 300);
+            this.bt_ModificarProduto.Name = "bt_ModificarProduto";
+            this.bt_ModificarProduto.Size = new System.Drawing.Size(75, 38);
+            this.bt_ModificarProduto.TabIndex = 11;
+            this.bt_ModificarProduto.Text = "Modificar";
+            this.bt_ModificarProduto.UseVisualStyleBackColor = true;
+            this.bt_ModificarProduto.Click += new System.EventHandler(this.bt_ModificarProduto_Click);
+            // 
             // Tela_Gerenciar_Produtos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.bt_ModificarProduto);
             this.Controls.Add(this.Fotos_Enviar);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -178,5 +190,6 @@ namespace Cafeteria_Carol
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox Fotos_Enviar;
+        private System.Windows.Forms.Button bt_ModificarProduto;
     }
 }

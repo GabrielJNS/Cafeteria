@@ -36,7 +36,10 @@ namespace Cafeteria_Carol
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnPedidoAtendido = new System.Windows.Forms.Button();
+            this.btnRecarregar = new System.Windows.Forms.Button();
+            this.txtPedidoID = new System.Windows.Forms.TextBox();
+            this.btnMarcarConcluido = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPedidos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,7 +55,7 @@ namespace Cafeteria_Carol
             this.Column6});
             this.dataGridViewPedidos.Location = new System.Drawing.Point(0, 0);
             this.dataGridViewPedidos.Name = "dataGridViewPedidos";
-            this.dataGridViewPedidos.Size = new System.Drawing.Size(643, 150);
+            this.dataGridViewPedidos.Size = new System.Drawing.Size(543, 388);
             this.dataGridViewPedidos.TabIndex = 0;
             this.dataGridViewPedidos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPedidos_CellContentClick);
             // 
@@ -63,7 +66,7 @@ namespace Cafeteria_Carol
             // 
             // Column2
             // 
-            this.Column2.HeaderText = "ClienteID";
+            this.Column2.HeaderText = "NomeCliente";
             this.Column2.Name = "Column2";
             // 
             // Column3
@@ -86,40 +89,77 @@ namespace Cafeteria_Carol
             this.Column6.HeaderText = "Status";
             this.Column6.Name = "Column6";
             // 
-            // btnPedidoAtendido
+            // btnRecarregar
             // 
-            this.btnPedidoAtendido.Location = new System.Drawing.Point(482, 307);
-            this.btnPedidoAtendido.Name = "btnPedidoAtendido";
-            this.btnPedidoAtendido.Size = new System.Drawing.Size(75, 23);
-            this.btnPedidoAtendido.TabIndex = 1;
-            this.btnPedidoAtendido.Text = "button1";
-            this.btnPedidoAtendido.UseVisualStyleBackColor = true;
-            this.btnPedidoAtendido.Click += new System.EventHandler(this.btnPedidoAtendido_Click);
+            this.btnRecarregar.Location = new System.Drawing.Point(633, 173);
+            this.btnRecarregar.Name = "btnRecarregar";
+            this.btnRecarregar.Size = new System.Drawing.Size(113, 51);
+            this.btnRecarregar.TabIndex = 2;
+            this.btnRecarregar.Text = "Recarregar";
+            this.btnRecarregar.UseVisualStyleBackColor = true;
+            this.btnRecarregar.Click += new System.EventHandler(this.btnRecarregar_Click);
+            // 
+            // txtPedidoID
+            // 
+            this.txtPedidoID.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtPedidoID.Location = new System.Drawing.Point(630, 35);
+            this.txtPedidoID.Name = "txtPedidoID";
+            this.txtPedidoID.Size = new System.Drawing.Size(116, 20);
+            this.txtPedidoID.TabIndex = 3;
+            this.txtPedidoID.TextChanged += new System.EventHandler(this.txtPedidoID_TextChanged);
+            // 
+            // btnMarcarConcluido
+            // 
+            this.btnMarcarConcluido.BackColor = System.Drawing.Color.Transparent;
+            this.btnMarcarConcluido.FlatAppearance.BorderSize = 4;
+            this.btnMarcarConcluido.Location = new System.Drawing.Point(645, 61);
+            this.btnMarcarConcluido.Name = "btnMarcarConcluido";
+            this.btnMarcarConcluido.Size = new System.Drawing.Size(82, 36);
+            this.btnMarcarConcluido.TabIndex = 4;
+            this.btnMarcarConcluido.Text = "Marcar como Concluido";
+            this.btnMarcarConcluido.UseVisualStyleBackColor = false;
+            this.btnMarcarConcluido.Click += new System.EventHandler(this.btnMarcarConcluido_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(588, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(215, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Digite o ID do pedido apos finalizar o pedido";
             // 
             // Tela_Pedido_Atendente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.btnPedidoAtendido);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.btnMarcarConcluido);
+            this.Controls.Add(this.txtPedidoID);
+            this.Controls.Add(this.btnRecarregar);
             this.Controls.Add(this.dataGridViewPedidos);
             this.Name = "Tela_Pedido_Atendente";
             this.Text = "Tela_Pedido_Atendente";
             this.Load += new System.EventHandler(this.Tela_Pedido_Atendente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPedidos)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridViewPedidos;
-        private System.Windows.Forms.Button btnPedidoAtendido;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.Button btnRecarregar;
+        private System.Windows.Forms.TextBox txtPedidoID;
+        private System.Windows.Forms.Button btnMarcarConcluido;
+        private System.Windows.Forms.Label label1;
     }
 }

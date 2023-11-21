@@ -123,3 +123,4 @@ C:\Users\gabri\Source\Repos\Projeto_Cafeteria13\11\Cafeteria_Carol\obj\Debug\Caf
 C:\Users\gabri\Source\Repos\Projeto_Cafeteria13\11\Cafeteria_Carol\obj\Debug\Cafeteria_Carol.csproj.CopyComplete
 C:\Users\gabri\Source\Repos\Projeto_Cafeteria13\11\Cafeteria_Carol\obj\Debug\Cafeteria_Carol.exe
 C:\Users\gabri\Source\Repos\Projeto_Cafeteria13\11\Cafeteria_Carol\obj\Debug\Cafeteria_Carol.pdb
+C:\Users\gabri\Source\Repos\Projeto_Cafeteria13\11\Cafeteria_Carol\obj\Debug\Cafeteria_Carol.Tela_Add_E_Modificar_Cadastro_Admin.resources

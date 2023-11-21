@@ -14,7 +14,8 @@ namespace Cafeteria_Carol
 {
     public partial class Tela_Principal_Admin : Form
     {
-        
+
+        string nomeUsuario = Tela_Cadastro.NomeUsuarioCadastrado;
 
         public Tela_Principal_Admin(string nomeUsuario)
         {
@@ -46,7 +47,8 @@ namespace Cafeteria_Carol
 
         private void bt_Cadastro_Click(object sender, EventArgs e)
         {
-
+            Tela_Add_E_Modificar_Cadastro_Admin novo = new Tela_Add_E_Modificar_Cadastro_Admin();
+            novo.Show();
         }
         private void Tela_Principal_Usuario_Load(object sender, EventArgs e)
         {

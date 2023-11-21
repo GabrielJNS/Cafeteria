@@ -31,7 +31,10 @@ namespace Cafeteria_Carol
             Quantidade = 1; 
         }
 
-        
+        public double Subtotal
+        {
+            get { return Quantidade * Preco; }
+        }
     }
 }
 

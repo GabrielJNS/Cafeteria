@@ -35,6 +35,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Cafe-inc.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
@@ -70,6 +73,12 @@
     <Compile Include="Pedidos.cs" />
     <Compile Include="ItemSacola.cs" />
     <Compile Include="Sacola.cs" />
+    <Compile Include="Tela_Add_E_Modificar_Cadastro_Admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tela_Add_E_Modificar_Cadastro_Admin.Designer.cs">
+      <DependentUpon>Tela_Add_E_Modificar_Cadastro_Admin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tela_Cadastro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +141,9 @@
     <Compile Include="Tela_Principal_Admin.Designer.cs">
       <DependentUpon>Tela_Principal_Admin.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Tela_Add_E_Modificar_Cadastro_Admin.resx">
+      <DependentUpon>Tela_Add_E_Modificar_Cadastro_Admin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Tela_Cadastro.resx">
       <DependentUpon>Tela_Cadastro.cs</DependentUpon>
     </EmbeddedResource>
@@ -164,6 +176,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Tela_Resumo_Pedido.resx">
       <DependentUpon>Tela_Resumo_Pedido.cs</DependentUpon>
@@ -184,6 +197,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Imagem do WhatsApp de 2023-11-17 à%28s%29 15.59.59_9f1f190c.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cadastro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cadastro1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Cafe-inc.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
