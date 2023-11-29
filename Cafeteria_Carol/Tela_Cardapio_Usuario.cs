@@ -20,7 +20,6 @@ namespace Cafeteria_Carol
             InitializeComponent();
             this.nomeUsuario = nomeUsuario;
             CarregarItensCardapio();
-            MessageBox.Show($"Nome do usuário ao carregar cardápio: {nomeUsuario}");
 
         }
 

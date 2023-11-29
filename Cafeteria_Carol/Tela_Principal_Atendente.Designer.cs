@@ -65,6 +65,7 @@ namespace Cafeteria_Carol
             this.bt_Menu.TabIndex = 3;
             this.bt_Menu.Text = "Menu";
             this.bt_Menu.UseVisualStyleBackColor = true;
+            this.bt_Menu.Click += new System.EventHandler(this.bt_Menu_Click);
             // 
             // bt_Comanda
             // 

@@ -177,19 +177,19 @@ namespace Cafeteria_Carol
             }
         }
 
-        private bool IsTelefoneValido(string telefone)
+        public bool IsTelefoneValido(string telefone)
         {
             string pattern = @"^\(\d{2}\)\s\d{5}-\d{4}$";
             return Regex.IsMatch(telefone, pattern);
         }
 
-        private bool IsDataValida(string data)
+        public bool IsDataValida(string data)
         {
             string pattern = @"^\d{2}/\d{2}/\d{4}$";
             return Regex.IsMatch(data, pattern);
         }
 
-        private void Tela_Cadastro_Load(object sender, EventArgs e)
+        public void Tela_Cadastro_Load(object sender, EventArgs e)
         {
 
         }

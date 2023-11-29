@@ -12,6 +12,7 @@ namespace Cafeteria_Carol
         {
             InitializeComponent();
             CarregarPedidosPendentes();
+            
         }
 
         private string connectionString = ConfiguracaoBanco.CaminhoBanco;
@@ -20,7 +21,7 @@ namespace Cafeteria_Carol
         private void CarregarPedidosPendentes()
         {
 
-            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+            using (SQLiteConnection connection = new SQLiteConnection(ConfiguracaoBanco.CaminhoBanco))
             {
                 connection.Open();
                 string query = "SELECT PedidoID, NomeCliente, NomeProduto, Quantidade, HoraPedido, Status FROM Pedidos WHERE Status = 'Pendente'";
@@ -46,26 +47,10 @@ namespace Cafeteria_Carol
             }
         }
 
-        private void dataGridViewPedidos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow selectedRow = dataGridViewPedidos.Rows[e.RowIndex];
-                int pedidoID = Convert.ToInt32(selectedRow.Cells["PedidoID"].Value);
-
-                DialogResult result = MessageBox.Show("Deseja marcar este pedido como Pendente?", "Confirmação", MessageBoxButtons.YesNo);
-
-                if (result == DialogResult.Yes)
-                {
-                    MarcarPedidoComoPendente(pedidoID);
-
-                    CarregarPedidosPendentes();
-                }
-            }
-        }
+        
         private void MarcarPedidoComoPendente(int pedidoID)
         {
-            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+            using (SQLiteConnection connection = new SQLiteConnection(ConfiguracaoBanco.CaminhoBanco))
             {
                 connection.Open();
                 string updateQuery = "UPDATE Pedidos SET Status = 'Pendente' WHERE PedidoID = @PedidoID";
@@ -89,7 +74,7 @@ namespace Cafeteria_Carol
         }
         private void MarcarPedidoComoConcluido(int pedidoID)
         {
-            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+            using (SQLiteConnection connection = new SQLiteConnection(ConfiguracaoBanco.CaminhoBanco))
             {
                 connection.Open();
                 string updateQuery = "UPDATE Pedidos SET Status = 'Concluído' WHERE PedidoID = @PedidoID";
@@ -136,7 +121,6 @@ namespace Cafeteria_Carol
 
         private void txtPedidoID_TextChanged(object sender, EventArgs e)
         {
-
         }
 
         private void btnMarcarConcluido_Click(object sender, EventArgs e)

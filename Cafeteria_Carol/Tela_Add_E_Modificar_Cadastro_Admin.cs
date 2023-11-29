@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
+using System.Text.RegularExpressions;
 
 namespace Cafeteria_Carol
 {
@@ -86,17 +87,20 @@ namespace Cafeteria_Carol
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (modoAdicionar)
+            if (ValidarCampos())
             {
-                AdicionarUsuario();
-            }
-            else
-            {
-                ModificarUsuario();
-            }
+                if (modoAdicionar)
+                {
+                    AdicionarUsuario();
+                }
+                else
+                {
+                    ModificarUsuario();
+                }
 
-            MessageBox.Show("Operação concluída com sucesso!");
-            Close();
+                MessageBox.Show("Operação concluída com sucesso!");
+                Close();
+            }
         }
 
         private void AdicionarUsuario()
@@ -107,7 +111,7 @@ namespace Cafeteria_Carol
 
                 using (SQLiteCommand command = new SQLiteCommand(connection))
                 {
-                    
+
 
                     command.CommandText = @"
                     INSERT INTO Usuarios (Nome, Email, Senha, Telefone, DataNascimento, Nivel)
@@ -154,7 +158,7 @@ namespace Cafeteria_Carol
             command.Parameters.AddWithValue("@Telefone", campo_Tel.Text);
             command.Parameters.AddWithValue("@DataNascimento", campo_Data.Text);
 
-            int nivel = 1; 
+            int nivel = 1;
             if (Box_Nivel != null && !string.IsNullOrEmpty(Box_Nivel.Text))
             {
                 if (int.TryParse(Box_Nivel.Text, out int nivelEscolhido))
@@ -181,5 +185,64 @@ namespace Cafeteria_Carol
         {
 
         }
+        
+
+        private bool ValidarCampos()
+        {
+            if (string.IsNullOrEmpty(campo_Nome.Text) || string.IsNullOrEmpty(campo_Email.Text) || string.IsNullOrEmpty(campo_Senha.Text) || string.IsNullOrEmpty(campo_Tel.Text) || string.IsNullOrEmpty(campo_Data.Text))
+            {
+                MessageBox.Show("Preencha todos os campos antes de cadastrar.");
+                return false;
+            }
+
+            if (!Validacao.IsEmailValido(campo_Email.Text))
+            {
+                MessageBox.Show("Insira um endereço de email válido.");
+                return false;
+            }
+
+            if (!Validacao.IsTelefoneValido(campo_Tel.Text))
+            {
+                MessageBox.Show("Formato de telefone inválido. Use (00) 00000-0000.");
+                return false;
+            }
+
+            if (!Validacao.IsDataValida(campo_Data.Text))
+            {
+                MessageBox.Show("Formato de data inválido. Use 00/00/0000.");
+                return false;
+            }
+
+                return true;
+        }
+
+        public static class Validacao
+        {
+            public static bool IsEmailValido(string email)
+            {
+                try
+                {
+                    var addr = new System.Net.Mail.MailAddress(email);
+                    return addr.Address == email;
+                }
+                catch
+                {
+                    return false;
+                }
+            }
+
+            public static bool IsTelefoneValido(string telefone)
+            {
+                string pattern = @"^\(\d{2}\)\s\d{5}-\d{4}$";
+                return Regex.IsMatch(telefone, pattern);
+            }
+
+            public static bool IsDataValida(string data)
+            {
+                string pattern = @"^\d{2}/\d{2}/\d{4}$";
+                return Regex.IsMatch(data, pattern);
+            }
+        }
     }
 }
+            

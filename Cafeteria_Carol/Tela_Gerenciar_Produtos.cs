@@ -75,7 +75,7 @@ namespace Cafeteria_Carol
 
         private void AdicionarProduto(string nome, string descricao, decimal preco, byte[] imagem)
         {
-            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+            using (SQLiteConnection connection = new SQLiteConnection(ConfiguracaoBanco.CaminhoBanco))
             {
                 try
                 {
@@ -106,7 +106,7 @@ namespace Cafeteria_Carol
 
         private void ModificarProduto(int produtoId, string nome, string descricao, decimal preco, byte[] imagem)
         {
-            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+            using (SQLiteConnection connection = new SQLiteConnection(ConfiguracaoBanco.CaminhoBanco))
             {
                 try
                 {
@@ -143,7 +143,7 @@ namespace Cafeteria_Carol
 
         private void ExcluirProduto(int produtoId)
         {
-            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+            using (SQLiteConnection connection = new SQLiteConnection(ConfiguracaoBanco.CaminhoBanco))
             {
                 try
                 {
@@ -196,7 +196,7 @@ namespace Cafeteria_Carol
 
         private void CarregarItensCardapio()
         {
-            using (SQLiteConnection connection = new SQLiteConnection(connectionString))
+            using (SQLiteConnection connection = new SQLiteConnection(ConfiguracaoBanco.CaminhoBanco))
             {
                 connection.Open();
                 string query = "SELECT ID, Nome, Descricao, Preco, Imagem FROM Cardapio";

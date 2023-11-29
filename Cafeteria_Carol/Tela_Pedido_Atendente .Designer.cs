@@ -57,7 +57,6 @@ namespace Cafeteria_Carol
             this.dataGridViewPedidos.Name = "dataGridViewPedidos";
             this.dataGridViewPedidos.Size = new System.Drawing.Size(543, 388);
             this.dataGridViewPedidos.TabIndex = 0;
-            this.dataGridViewPedidos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPedidos_CellContentClick);
             // 
             // Column1
             // 

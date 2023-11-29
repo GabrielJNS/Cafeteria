@@ -103,6 +103,12 @@
     <Compile Include="Tela_Gerenciar_Produtos.Designer.cs">
       <DependentUpon>Tela_Gerenciar_Produtos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Tela_Menu_Atendente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Tela_Menu_Atendente.Designer.cs">
+      <DependentUpon>Tela_Menu_Atendente.cs</DependentUpon>
+    </Compile>
     <Compile Include="Tela_Pedido_Atendente .cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,6 +161,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Tela_Gerenciar_Produtos.resx">
       <DependentUpon>Tela_Gerenciar_Produtos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tela_Menu_Atendente.resx">
+      <DependentUpon>Tela_Menu_Atendente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Tela_Pedido_Atendente .resx">
       <DependentUpon>Tela_Pedido_Atendente .cs</DependentUpon>

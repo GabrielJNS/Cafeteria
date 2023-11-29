@@ -152,11 +152,11 @@ namespace Cafeteria_Carol
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(121, 333);
+            this.button1.Location = new System.Drawing.Point(123, 336);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(67, 40);
             this.button1.TabIndex = 27;
-            this.button1.Text = "ADD";
+            this.button1.Text = "Adicionar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
