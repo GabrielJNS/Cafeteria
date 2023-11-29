@@ -167,7 +167,7 @@ namespace Cafeteria_Carol
                 }
                 else
                 {
-                    MessageBox.Show("Digite um número válido para o nível.");
+                    MessageBox.Show("Digite um numero de 1 a 3, sendo 1 usuario, 2 atendente e 3 Administrador.");
                     return;
                 }
             }
@@ -183,9 +183,25 @@ namespace Cafeteria_Carol
 
         private void Box_Nivel_TextChanged(object sender, EventArgs e)
         {
-
+            if (int.TryParse(Box_Nivel.Text, out int nivel))
+            {
+                if (nivel >= 1 && nivel <= 3)
+                {
+                }
+                else
+                {
+                    MessageBox.Show("Digite um número de 1 a 3 para o campo Nível. Sendo 1 cliente, 2 atendente e 3 administrador");
+                    Box_Nivel.Text = ""; 
+                }
+            }
+            else
+            {
+                //MessageBox.Show("Digite um número válido para o campo Nível.");
+                Box_Nivel.Text = "";
+            }
         }
-        
+
+
 
         private bool ValidarCampos()
         {
@@ -213,7 +229,7 @@ namespace Cafeteria_Carol
                 return false;
             }
 
-                return true;
+            return true;
         }
 
         public static class Validacao
@@ -243,6 +259,20 @@ namespace Cafeteria_Carol
                 return Regex.IsMatch(data, pattern);
             }
         }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        { }
+
+        private void button2_Click_2(object sender, EventArgs e)
+        {
+
+        }
     }
 }
+
             
