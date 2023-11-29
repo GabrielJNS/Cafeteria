@@ -106,15 +106,7 @@ namespace Cafeteria_Carol
            
             int nivel = 1;
 
-            if (email.EndsWith("@atendente.com"))
-            {
-                nivel = 2; 
-            }
-            else if (email.EndsWith("@admin.com"))
-            {
-                nivel = 3; 
-            }
-
+            
 
             
 

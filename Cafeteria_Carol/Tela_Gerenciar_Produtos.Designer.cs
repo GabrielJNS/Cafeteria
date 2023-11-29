@@ -41,7 +41,10 @@ namespace Cafeteria_Carol
             this.label4 = new System.Windows.Forms.Label();
             this.Fotos_Enviar = new System.Windows.Forms.PictureBox();
             this.bt_ModificarProduto = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnAtualizar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Fotos_Enviar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // bt_AdicionarProduto
@@ -50,13 +53,13 @@ namespace Cafeteria_Carol
             this.bt_AdicionarProduto.Name = "bt_AdicionarProduto";
             this.bt_AdicionarProduto.Size = new System.Drawing.Size(70, 38);
             this.bt_AdicionarProduto.TabIndex = 0;
-            this.bt_AdicionarProduto.Text = "add";
+            this.bt_AdicionarProduto.Text = "Adicionar";
             this.bt_AdicionarProduto.UseVisualStyleBackColor = true;
             this.bt_AdicionarProduto.Click += new System.EventHandler(this.bt_AdicionarProduto_Click);
             // 
             // bt_ExcluirProduto
             // 
-            this.bt_ExcluirProduto.Location = new System.Drawing.Point(427, 240);
+            this.bt_ExcluirProduto.Location = new System.Drawing.Point(602, 210);
             this.bt_ExcluirProduto.Name = "bt_ExcluirProduto";
             this.bt_ExcluirProduto.Size = new System.Drawing.Size(112, 38);
             this.bt_ExcluirProduto.TabIndex = 1;
@@ -74,7 +77,7 @@ namespace Cafeteria_Carol
             // 
             // txtDescricaoProduto
             // 
-            this.txtDescricaoProduto.Location = new System.Drawing.Point(31, 132);
+            this.txtDescricaoProduto.Location = new System.Drawing.Point(31, 145);
             this.txtDescricaoProduto.Name = "txtDescricaoProduto";
             this.txtDescricaoProduto.Size = new System.Drawing.Size(188, 20);
             this.txtDescricaoProduto.TabIndex = 3;
@@ -82,7 +85,7 @@ namespace Cafeteria_Carol
             // 
             // txtPrecoProduto
             // 
-            this.txtPrecoProduto.Location = new System.Drawing.Point(31, 203);
+            this.txtPrecoProduto.Location = new System.Drawing.Point(31, 220);
             this.txtPrecoProduto.Name = "txtPrecoProduto";
             this.txtPrecoProduto.Size = new System.Drawing.Size(188, 20);
             this.txtPrecoProduto.TabIndex = 4;
@@ -90,7 +93,7 @@ namespace Cafeteria_Carol
             // 
             // txtIDProduto
             // 
-            this.txtIDProduto.Location = new System.Drawing.Point(427, 203);
+            this.txtIDProduto.Location = new System.Drawing.Point(368, 224);
             this.txtIDProduto.Name = "txtIDProduto";
             this.txtIDProduto.Size = new System.Drawing.Size(188, 20);
             this.txtIDProduto.TabIndex = 5;
@@ -108,7 +111,7 @@ namespace Cafeteria_Carol
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(28, 102);
+            this.label2.Location = new System.Drawing.Point(28, 115);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(55, 13);
             this.label2.TabIndex = 7;
@@ -117,7 +120,7 @@ namespace Cafeteria_Carol
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(28, 174);
+            this.label3.Location = new System.Drawing.Point(28, 191);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 8;
@@ -126,7 +129,7 @@ namespace Cafeteria_Carol
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(424, 171);
+            this.label4.Location = new System.Drawing.Point(344, 227);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(18, 13);
             this.label4.TabIndex = 9;
@@ -134,7 +137,7 @@ namespace Cafeteria_Carol
             // 
             // Fotos_Enviar
             // 
-            this.Fotos_Enviar.Location = new System.Drawing.Point(427, 31);
+            this.Fotos_Enviar.Location = new System.Drawing.Point(389, 60);
             this.Fotos_Enviar.Name = "Fotos_Enviar";
             this.Fotos_Enviar.Size = new System.Drawing.Size(100, 71);
             this.Fotos_Enviar.TabIndex = 10;
@@ -143,7 +146,7 @@ namespace Cafeteria_Carol
             // 
             // bt_ModificarProduto
             // 
-            this.bt_ModificarProduto.Location = new System.Drawing.Point(133, 300);
+            this.bt_ModificarProduto.Location = new System.Drawing.Point(116, 300);
             this.bt_ModificarProduto.Name = "bt_ModificarProduto";
             this.bt_ModificarProduto.Size = new System.Drawing.Size(75, 38);
             this.bt_ModificarProduto.TabIndex = 11;
@@ -151,11 +154,32 @@ namespace Cafeteria_Carol
             this.bt_ModificarProduto.UseVisualStyleBackColor = true;
             this.bt_ModificarProduto.Click += new System.EventHandler(this.bt_ModificarProduto_Click);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(331, 31);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(398, 155);
+            this.dataGridView1.TabIndex = 12;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // btnAtualizar
+            // 
+            this.btnAtualizar.Location = new System.Drawing.Point(602, 254);
+            this.btnAtualizar.Name = "btnAtualizar";
+            this.btnAtualizar.Size = new System.Drawing.Size(112, 34);
+            this.btnAtualizar.TabIndex = 13;
+            this.btnAtualizar.Text = "Atualizar";
+            this.btnAtualizar.UseVisualStyleBackColor = true;
+            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
+            // 
             // Tela_Gerenciar_Produtos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnAtualizar);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.bt_ModificarProduto);
             this.Controls.Add(this.Fotos_Enviar);
             this.Controls.Add(this.label4);
@@ -172,6 +196,7 @@ namespace Cafeteria_Carol
             this.Text = "Tela_Gerenciar_Produtos";
             this.Load += new System.EventHandler(this.Tela_Gerenciar_Produtos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Fotos_Enviar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,5 +216,7 @@ namespace Cafeteria_Carol
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox Fotos_Enviar;
         private System.Windows.Forms.Button bt_ModificarProduto;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnAtualizar;
     }
 }

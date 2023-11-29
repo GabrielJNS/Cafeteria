@@ -13,6 +13,7 @@ namespace Cafeteria_Carol
 {
     public partial class Tela_Add_E_Modificar_Cadastro_Admin : Form
     {
+
         private bool modoAdicionar = true;
         private int usuarioID;
 
@@ -156,13 +157,14 @@ namespace Cafeteria_Carol
             int nivel = 1; 
             if (Box_Nivel != null && !string.IsNullOrEmpty(Box_Nivel.Text))
             {
-                if (Box_Nivel.Text == "Atendente")
+                if (int.TryParse(Box_Nivel.Text, out int nivelEscolhido))
                 {
-                    nivel = 2;
+                    nivel = nivelEscolhido;
                 }
-                else if (Box_Nivel.Text == "Administrador")
+                else
                 {
-                    nivel = 3;
+                    MessageBox.Show("Digite um número válido para o nível.");
+                    return;
                 }
             }
             command.Parameters.AddWithValue("@Nivel", nivel);
