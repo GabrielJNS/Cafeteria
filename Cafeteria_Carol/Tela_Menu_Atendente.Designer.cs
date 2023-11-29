@@ -41,6 +41,7 @@ namespace Cafeteria_Carol
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(567, 263);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // label1
             // 
@@ -61,6 +62,7 @@ namespace Cafeteria_Carol
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Tela_Menu_Atendente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tela_Menu_Atendente";
             this.Load += new System.EventHandler(this.Tela_Menu_Atendente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

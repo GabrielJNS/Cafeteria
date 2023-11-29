@@ -45,7 +45,7 @@ namespace Cafeteria_Carol
             // 
             // btnAdicionarAoCarrinho
             // 
-            this.btnAdicionarAoCarrinho.Location = new System.Drawing.Point(610, 388);
+            this.btnAdicionarAoCarrinho.Location = new System.Drawing.Point(542, 160);
             this.btnAdicionarAoCarrinho.Name = "btnAdicionarAoCarrinho";
             this.btnAdicionarAoCarrinho.Size = new System.Drawing.Size(75, 23);
             this.btnAdicionarAoCarrinho.TabIndex = 5;
@@ -103,7 +103,7 @@ namespace Cafeteria_Carol
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(744, 245);
+            this.lblTotal.Location = new System.Drawing.Point(747, 217);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(35, 13);
             this.lblTotal.TabIndex = 7;
@@ -112,19 +112,19 @@ namespace Cafeteria_Carol
             // 
             // btnAdicionarSacola
             // 
-            this.btnAdicionarSacola.Location = new System.Drawing.Point(713, 77);
+            this.btnAdicionarSacola.Location = new System.Drawing.Point(695, 77);
             this.btnAdicionarSacola.Name = "btnAdicionarSacola";
-            this.btnAdicionarSacola.Size = new System.Drawing.Size(123, 54);
+            this.btnAdicionarSacola.Size = new System.Drawing.Size(157, 54);
             this.btnAdicionarSacola.TabIndex = 8;
-            this.btnAdicionarSacola.Text = "add item";
+            this.btnAdicionarSacola.Text = "Adicionar item a Sacola";
             this.btnAdicionarSacola.UseVisualStyleBackColor = true;
             this.btnAdicionarSacola.Click += new System.EventHandler(this.btnAdicionarSacola_Click);
             // 
             // btnComanda
             // 
-            this.btnComanda.Location = new System.Drawing.Point(679, 165);
+            this.btnComanda.Location = new System.Drawing.Point(695, 146);
             this.btnComanda.Name = "btnComanda";
-            this.btnComanda.Size = new System.Drawing.Size(157, 45);
+            this.btnComanda.Size = new System.Drawing.Size(157, 50);
             this.btnComanda.TabIndex = 9;
             this.btnComanda.Text = "Confirmar";
             this.btnComanda.UseVisualStyleBackColor = true;
@@ -132,7 +132,7 @@ namespace Cafeteria_Carol
             // 
             // btnRecarregar
             // 
-            this.btnRecarregar.Location = new System.Drawing.Point(713, 273);
+            this.btnRecarregar.Location = new System.Drawing.Point(31, 216);
             this.btnRecarregar.Name = "btnRecarregar";
             this.btnRecarregar.Size = new System.Drawing.Size(90, 38);
             this.btnRecarregar.TabIndex = 10;

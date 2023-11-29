@@ -53,6 +53,21 @@ namespace Cafeteria_Carol
         private void Tela_Principal_Usuario_Load(object sender, EventArgs e)
         {
         }
+
+        private void bt_Gerenciar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bt_Gerenciar_Vendas_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bt_Estoque_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

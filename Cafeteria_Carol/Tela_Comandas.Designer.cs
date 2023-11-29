@@ -58,7 +58,7 @@ namespace Cafeteria_Carol
             this.dataGridViewComandas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewComandas.Location = new System.Drawing.Point(30, 28);
             this.dataGridViewComandas.Name = "dataGridViewComandas";
-            this.dataGridViewComandas.Size = new System.Drawing.Size(673, 150);
+            this.dataGridViewComandas.Size = new System.Drawing.Size(602, 150);
             this.dataGridViewComandas.TabIndex = 0;
             this.dataGridViewComandas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewComandas_CellContentClick);
             // 

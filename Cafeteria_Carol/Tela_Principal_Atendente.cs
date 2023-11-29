@@ -59,5 +59,10 @@ namespace Cafeteria_Carol
             Tela_Menu_Atendente novo = new Tela_Menu_Atendente();
             novo.Show();
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

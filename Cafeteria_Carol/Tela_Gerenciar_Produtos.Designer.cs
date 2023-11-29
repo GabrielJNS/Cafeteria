@@ -39,12 +39,12 @@ namespace Cafeteria_Carol
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.Fotos_Enviar = new System.Windows.Forms.PictureBox();
             this.bt_ModificarProduto = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnAtualizar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.Fotos_Enviar)).BeginInit();
+            this.Fotos_Enviar = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Fotos_Enviar)).BeginInit();
             this.SuspendLayout();
             // 
             // bt_AdicionarProduto
@@ -107,6 +107,7 @@ namespace Cafeteria_Carol
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 6;
             this.label1.Text = "Nome";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -134,15 +135,6 @@ namespace Cafeteria_Carol
             this.label4.Size = new System.Drawing.Size(18, 13);
             this.label4.TabIndex = 9;
             this.label4.Text = "ID";
-            // 
-            // Fotos_Enviar
-            // 
-            this.Fotos_Enviar.Location = new System.Drawing.Point(389, 60);
-            this.Fotos_Enviar.Name = "Fotos_Enviar";
-            this.Fotos_Enviar.Size = new System.Drawing.Size(100, 71);
-            this.Fotos_Enviar.TabIndex = 10;
-            this.Fotos_Enviar.TabStop = false;
-            this.Fotos_Enviar.Click += new System.EventHandler(this.Fotos_Enviar_Click);
             // 
             // bt_ModificarProduto
             // 
@@ -173,6 +165,15 @@ namespace Cafeteria_Carol
             this.btnAtualizar.UseVisualStyleBackColor = true;
             this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
             // 
+            // Fotos_Enviar
+            // 
+            this.Fotos_Enviar.Location = new System.Drawing.Point(389, 60);
+            this.Fotos_Enviar.Name = "Fotos_Enviar";
+            this.Fotos_Enviar.Size = new System.Drawing.Size(100, 71);
+            this.Fotos_Enviar.TabIndex = 10;
+            this.Fotos_Enviar.TabStop = false;
+            this.Fotos_Enviar.Click += new System.EventHandler(this.Fotos_Enviar_Click);
+            // 
             // Tela_Gerenciar_Produtos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -193,10 +194,11 @@ namespace Cafeteria_Carol
             this.Controls.Add(this.bt_ExcluirProduto);
             this.Controls.Add(this.bt_AdicionarProduto);
             this.Name = "Tela_Gerenciar_Produtos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tela_Gerenciar_Produtos";
             this.Load += new System.EventHandler(this.Tela_Gerenciar_Produtos_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.Fotos_Enviar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Fotos_Enviar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

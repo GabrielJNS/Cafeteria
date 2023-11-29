@@ -41,7 +41,7 @@ namespace Cafeteria_Carol
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(40, 141);
+            this.label2.Location = new System.Drawing.Point(12, 9);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(114, 13);
             this.label2.TabIndex = 2;
@@ -49,16 +49,17 @@ namespace Cafeteria_Carol
             // 
             // bt_Estoque
             // 
-            this.bt_Estoque.Location = new System.Drawing.Point(533, 61);
+            this.bt_Estoque.Location = new System.Drawing.Point(533, 101);
             this.bt_Estoque.Name = "bt_Estoque";
             this.bt_Estoque.Size = new System.Drawing.Size(189, 74);
             this.bt_Estoque.TabIndex = 3;
             this.bt_Estoque.Text = "Estoque";
             this.bt_Estoque.UseVisualStyleBackColor = true;
+            this.bt_Estoque.Click += new System.EventHandler(this.bt_Estoque_Click);
             // 
             // bt_Cadastro
             // 
-            this.bt_Cadastro.Location = new System.Drawing.Point(533, 141);
+            this.bt_Cadastro.Location = new System.Drawing.Point(533, 181);
             this.bt_Cadastro.Name = "bt_Cadastro";
             this.bt_Cadastro.Size = new System.Drawing.Size(189, 74);
             this.bt_Cadastro.TabIndex = 4;
@@ -68,25 +69,27 @@ namespace Cafeteria_Carol
             // 
             // bt_Gerenciar
             // 
-            this.bt_Gerenciar.Location = new System.Drawing.Point(533, 221);
+            this.bt_Gerenciar.Location = new System.Drawing.Point(533, 261);
             this.bt_Gerenciar.Name = "bt_Gerenciar";
             this.bt_Gerenciar.Size = new System.Drawing.Size(189, 74);
             this.bt_Gerenciar.TabIndex = 5;
             this.bt_Gerenciar.Text = "Gerenciar Cadastro";
             this.bt_Gerenciar.UseVisualStyleBackColor = true;
+            this.bt_Gerenciar.Click += new System.EventHandler(this.bt_Gerenciar_Click);
             // 
             // bt_Gerenciar_Vendas
             // 
-            this.bt_Gerenciar_Vendas.Location = new System.Drawing.Point(533, 301);
+            this.bt_Gerenciar_Vendas.Location = new System.Drawing.Point(533, 341);
             this.bt_Gerenciar_Vendas.Name = "bt_Gerenciar_Vendas";
             this.bt_Gerenciar_Vendas.Size = new System.Drawing.Size(189, 74);
             this.bt_Gerenciar_Vendas.TabIndex = 6;
             this.bt_Gerenciar_Vendas.Text = "Gerenciar Vendas";
             this.bt_Gerenciar_Vendas.UseVisualStyleBackColor = true;
+            this.bt_Gerenciar_Vendas.Click += new System.EventHandler(this.bt_Gerenciar_Vendas_Click);
             // 
             // bt_Gerenciar_Produtos
             // 
-            this.bt_Gerenciar_Produtos.Location = new System.Drawing.Point(12, 301);
+            this.bt_Gerenciar_Produtos.Location = new System.Drawing.Point(533, 21);
             this.bt_Gerenciar_Produtos.Name = "bt_Gerenciar_Produtos";
             this.bt_Gerenciar_Produtos.Size = new System.Drawing.Size(189, 74);
             this.bt_Gerenciar_Produtos.TabIndex = 8;
@@ -97,7 +100,7 @@ namespace Cafeteria_Carol
             // lb_User
             // 
             this.lb_User.AutoSize = true;
-            this.lb_User.Location = new System.Drawing.Point(220, 31);
+            this.lb_User.Location = new System.Drawing.Point(12, 42);
             this.lb_User.Name = "lb_User";
             this.lb_User.Size = new System.Drawing.Size(29, 13);
             this.lb_User.TabIndex = 9;
@@ -117,6 +120,7 @@ namespace Cafeteria_Carol
             this.Controls.Add(this.bt_Estoque);
             this.Controls.Add(this.label2);
             this.Name = "Tela_Principal_Admin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tele_Principal_Admin";
             this.Load += new System.EventHandler(this.Tela_Principal_Admin_Load);
             this.ResumeLayout(false);

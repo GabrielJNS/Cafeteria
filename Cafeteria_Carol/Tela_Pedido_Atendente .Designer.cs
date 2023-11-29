@@ -90,7 +90,7 @@ namespace Cafeteria_Carol
             // 
             // btnRecarregar
             // 
-            this.btnRecarregar.Location = new System.Drawing.Point(633, 173);
+            this.btnRecarregar.Location = new System.Drawing.Point(630, 169);
             this.btnRecarregar.Name = "btnRecarregar";
             this.btnRecarregar.Size = new System.Drawing.Size(113, 51);
             this.btnRecarregar.TabIndex = 2;
@@ -139,6 +139,7 @@ namespace Cafeteria_Carol
             this.Controls.Add(this.btnRecarregar);
             this.Controls.Add(this.dataGridViewPedidos);
             this.Name = "Tela_Pedido_Atendente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tela_Pedido_Atendente";
             this.Load += new System.EventHandler(this.Tela_Pedido_Atendente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPedidos)).EndInit();
