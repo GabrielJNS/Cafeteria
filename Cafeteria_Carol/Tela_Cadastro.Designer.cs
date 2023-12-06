@@ -44,10 +44,10 @@
             this.campo_Nome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.campo_Nome.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.campo_Nome.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.campo_Nome.Location = new System.Drawing.Point(80, 141);
+            this.campo_Nome.Location = new System.Drawing.Point(83, 160);
             this.campo_Nome.Margin = new System.Windows.Forms.Padding(2);
             this.campo_Nome.Name = "campo_Nome";
-            this.campo_Nome.Size = new System.Drawing.Size(252, 16);
+            this.campo_Nome.Size = new System.Drawing.Size(275, 16);
             this.campo_Nome.TabIndex = 3;
             this.campo_Nome.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -56,10 +56,10 @@
             this.campo_Email.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.campo_Email.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.campo_Email.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.campo_Email.Location = new System.Drawing.Point(80, 208);
+            this.campo_Email.Location = new System.Drawing.Point(83, 238);
             this.campo_Email.Margin = new System.Windows.Forms.Padding(2);
             this.campo_Email.Name = "campo_Email";
-            this.campo_Email.Size = new System.Drawing.Size(252, 16);
+            this.campo_Email.Size = new System.Drawing.Size(275, 16);
             this.campo_Email.TabIndex = 8;
             this.campo_Email.TextChanged += new System.EventHandler(this.TextBox2_TextChanged);
             // 
@@ -68,10 +68,10 @@
             this.campo_Conf_Email.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.campo_Conf_Email.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.campo_Conf_Email.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.campo_Conf_Email.Location = new System.Drawing.Point(80, 276);
+            this.campo_Conf_Email.Location = new System.Drawing.Point(83, 315);
             this.campo_Conf_Email.Margin = new System.Windows.Forms.Padding(2);
             this.campo_Conf_Email.Name = "campo_Conf_Email";
-            this.campo_Conf_Email.Size = new System.Drawing.Size(252, 16);
+            this.campo_Conf_Email.Size = new System.Drawing.Size(275, 16);
             this.campo_Conf_Email.TabIndex = 9;
             // 
             // campo_Senha
@@ -79,10 +79,10 @@
             this.campo_Senha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.campo_Senha.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.campo_Senha.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.campo_Senha.Location = new System.Drawing.Point(80, 345);
+            this.campo_Senha.Location = new System.Drawing.Point(83, 393);
             this.campo_Senha.Margin = new System.Windows.Forms.Padding(2);
             this.campo_Senha.Name = "campo_Senha";
-            this.campo_Senha.Size = new System.Drawing.Size(252, 16);
+            this.campo_Senha.Size = new System.Drawing.Size(275, 16);
             this.campo_Senha.TabIndex = 10;
             this.campo_Senha.TextChanged += new System.EventHandler(this.campo_Senha_TextChanged);
             // 
@@ -91,10 +91,10 @@
             this.campo_Conf_Senha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.campo_Conf_Senha.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.campo_Conf_Senha.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.campo_Conf_Senha.Location = new System.Drawing.Point(80, 414);
+            this.campo_Conf_Senha.Location = new System.Drawing.Point(83, 469);
             this.campo_Conf_Senha.Margin = new System.Windows.Forms.Padding(2);
             this.campo_Conf_Senha.Name = "campo_Conf_Senha";
-            this.campo_Conf_Senha.Size = new System.Drawing.Size(252, 16);
+            this.campo_Conf_Senha.Size = new System.Drawing.Size(275, 16);
             this.campo_Conf_Senha.TabIndex = 11;
             this.campo_Conf_Senha.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
@@ -103,10 +103,10 @@
             this.campo_Tel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.campo_Tel.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.campo_Tel.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.campo_Tel.Location = new System.Drawing.Point(80, 481);
+            this.campo_Tel.Location = new System.Drawing.Point(83, 546);
             this.campo_Tel.Margin = new System.Windows.Forms.Padding(2);
             this.campo_Tel.Name = "campo_Tel";
-            this.campo_Tel.Size = new System.Drawing.Size(252, 16);
+            this.campo_Tel.Size = new System.Drawing.Size(275, 16);
             this.campo_Tel.TabIndex = 13;
             this.campo_Tel.TextChanged += new System.EventHandler(this.campo_Tel_TextChanged);
             // 
@@ -115,10 +115,10 @@
             this.campo_Data.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.campo_Data.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.campo_Data.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.campo_Data.Location = new System.Drawing.Point(80, 548);
+            this.campo_Data.Location = new System.Drawing.Point(83, 624);
             this.campo_Data.Margin = new System.Windows.Forms.Padding(2);
             this.campo_Data.Name = "campo_Data";
-            this.campo_Data.Size = new System.Drawing.Size(252, 16);
+            this.campo_Data.Size = new System.Drawing.Size(275, 16);
             this.campo_Data.TabIndex = 15;
             this.campo_Data.TextChanged += new System.EventHandler(this.campo_Data_TextChanged);
             // 
@@ -131,10 +131,10 @@
             this.bt_cadastrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.bt_cadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_cadastrar.Font = new System.Drawing.Font("Roboto", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bt_cadastrar.Location = new System.Drawing.Point(124, 594);
+            this.bt_cadastrar.Location = new System.Drawing.Point(132, 672);
             this.bt_cadastrar.Margin = new System.Windows.Forms.Padding(2);
             this.bt_cadastrar.Name = "bt_cadastrar";
-            this.bt_cadastrar.Size = new System.Drawing.Size(165, 29);
+            this.bt_cadastrar.Size = new System.Drawing.Size(176, 36);
             this.bt_cadastrar.TabIndex = 0;
             this.bt_cadastrar.UseVisualStyleBackColor = false;
             this.bt_cadastrar.Click += new System.EventHandler(this.bt_cadastrar_Click);
@@ -145,7 +145,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Cafeteria_Carol.Properties.Resources.Cadastro1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(414, 660);
+            this.ClientSize = new System.Drawing.Size(443, 749);
             this.Controls.Add(this.campo_Data);
             this.Controls.Add(this.campo_Tel);
             this.Controls.Add(this.campo_Conf_Senha);

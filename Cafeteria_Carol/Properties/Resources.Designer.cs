@@ -63,6 +63,26 @@ namespace Cafeteria_Carol.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AreaAdmin {
+            get {
+                object obj = ResourceManager.GetObject("AreaAdmin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap AreaAtendente {
+            get {
+                object obj = ResourceManager.GetObject("AreaAtendente", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Cadastro {
             get {
                 object obj = ResourceManager.GetObject("Cadastro", resourceCulture);
@@ -83,9 +103,59 @@ namespace Cafeteria_Carol.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap CadastroFunc {
+            get {
+                object obj = ResourceManager.GetObject("CadastroFunc", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Cardapio {
+            get {
+                object obj = ResourceManager.GetObject("Cardapio", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap GerenciarProd {
+            get {
+                object obj = ResourceManager.GetObject("GerenciarProd", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Imagem_do_WhatsApp_de_2023_11_17_à_s__15_59_59_9f1f190c {
             get {
                 object obj = ResourceManager.GetObject("Imagem do WhatsApp de 2023-11-17 à(s) 15.59.59_9f1f190c", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Login {
+            get {
+                object obj = ResourceManager.GetObject("Login", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap TelaMain {
+            get {
+                object obj = ResourceManager.GetObject("TelaMain", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -45,10 +45,10 @@ namespace Cafeteria_Carol
             this.bt_Cardápio.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.bt_Cardápio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.bt_Cardápio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_Cardápio.Location = new System.Drawing.Point(65, 297);
-            this.bt_Cardápio.Margin = new System.Windows.Forms.Padding(2);
+            this.bt_Cardápio.Location = new System.Drawing.Point(79, 358);
+            this.bt_Cardápio.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bt_Cardápio.Name = "bt_Cardápio";
-            this.bt_Cardápio.Size = new System.Drawing.Size(202, 53);
+            this.bt_Cardápio.Size = new System.Drawing.Size(247, 63);
             this.bt_Cardápio.TabIndex = 0;
             this.bt_Cardápio.UseVisualStyleBackColor = false;
             this.bt_Cardápio.Click += new System.EventHandler(this.bt_Cardápio_Click);
@@ -61,10 +61,10 @@ namespace Cafeteria_Carol
             this.bt_Comanda.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.bt_Comanda.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.bt_Comanda.ForeColor = System.Drawing.Color.Transparent;
-            this.bt_Comanda.Location = new System.Drawing.Point(336, 297);
-            this.bt_Comanda.Margin = new System.Windows.Forms.Padding(2);
+            this.bt_Comanda.Location = new System.Drawing.Point(412, 358);
+            this.bt_Comanda.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bt_Comanda.Name = "bt_Comanda";
-            this.bt_Comanda.Size = new System.Drawing.Size(202, 53);
+            this.bt_Comanda.Size = new System.Drawing.Size(241, 63);
             this.bt_Comanda.TabIndex = 1;
             this.bt_Comanda.UseVisualStyleBackColor = false;
             this.bt_Comanda.Click += new System.EventHandler(this.bt_Comanda_Click);
@@ -76,10 +76,10 @@ namespace Cafeteria_Carol
             this.bt_ResumoPedido.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.bt_ResumoPedido.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.bt_ResumoPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_ResumoPedido.Location = new System.Drawing.Point(610, 297);
-            this.bt_ResumoPedido.Margin = new System.Windows.Forms.Padding(2);
+            this.bt_ResumoPedido.Location = new System.Drawing.Point(741, 358);
+            this.bt_ResumoPedido.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bt_ResumoPedido.Name = "bt_ResumoPedido";
-            this.bt_ResumoPedido.Size = new System.Drawing.Size(200, 51);
+            this.bt_ResumoPedido.Size = new System.Drawing.Size(251, 63);
             this.bt_ResumoPedido.TabIndex = 2;
             this.bt_ResumoPedido.UseVisualStyleBackColor = false;
             this.bt_ResumoPedido.Click += new System.EventHandler(this.bt_ResumoPedido_Click);
@@ -91,10 +91,10 @@ namespace Cafeteria_Carol
             this.bt_Confi.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.bt_Confi.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.bt_Confi.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.bt_Confi.Location = new System.Drawing.Point(699, 34);
-            this.bt_Confi.Margin = new System.Windows.Forms.Padding(2);
+            this.bt_Confi.Location = new System.Drawing.Point(853, 42);
+            this.bt_Confi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bt_Confi.Name = "bt_Confi";
-            this.bt_Confi.Size = new System.Drawing.Size(45, 37);
+            this.bt_Confi.Size = new System.Drawing.Size(57, 46);
             this.bt_Confi.TabIndex = 8;
             this.bt_Confi.UseVisualStyleBackColor = false;
             // 
@@ -102,11 +102,12 @@ namespace Cafeteria_Carol
             // 
             this.lb_User.AutoSize = true;
             this.lb_User.BackColor = System.Drawing.Color.Transparent;
-            this.lb_User.Font = new System.Drawing.Font("Roboto", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_User.ForeColor = System.Drawing.Color.Black;
-            this.lb_User.Location = new System.Drawing.Point(12, 19);
+            this.lb_User.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lb_User.ForeColor = System.Drawing.Color.Coral;
+            this.lb_User.Location = new System.Drawing.Point(31, 9);
+            this.lb_User.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lb_User.Name = "lb_User";
-            this.lb_User.Size = new System.Drawing.Size(62, 23);
+            this.lb_User.Size = new System.Drawing.Size(64, 24);
             this.lb_User.TabIndex = 10;
             this.lb_User.Text = "label2";
             this.lb_User.Click += new System.EventHandler(this.lb_User_Click);
@@ -118,28 +119,30 @@ namespace Cafeteria_Carol
             this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(778, 34);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Location = new System.Drawing.Point(948, 42);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(52, 37);
+            this.button1.Size = new System.Drawing.Size(64, 46);
             this.button1.TabIndex = 11;
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // Tela_Principal_Usuario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::Cafeteria_Carol.Properties.Resources.Imagem_do_WhatsApp_de_2023_11_17_à_s__15_59_59_9f1f190c;
+            this.BackgroundImage = global::Cafeteria_Carol.Properties.Resources.TelaMain;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(876, 460);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lb_User);
             this.Controls.Add(this.bt_Confi);
             this.Controls.Add(this.bt_ResumoPedido);
             this.Controls.Add(this.bt_Comanda);
             this.Controls.Add(this.bt_Cardápio);
+            this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.Name = "Tela_Principal_Usuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

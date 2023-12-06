@@ -38,17 +38,20 @@ namespace Cafeteria_Carol
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(232, 237);
+            this.lblTotal.Location = new System.Drawing.Point(309, 292);
+            this.lblTotal.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(35, 13);
+            this.lblTotal.Size = new System.Drawing.Size(46, 17);
             this.lblTotal.TabIndex = 1;
             this.lblTotal.Text = "label1";
+            this.lblTotal.Click += new System.EventHandler(this.lblTotal_Click);
             // 
             // btnPagamento
             // 
-            this.btnPagamento.Location = new System.Drawing.Point(468, 247);
+            this.btnPagamento.Location = new System.Drawing.Point(624, 304);
+            this.btnPagamento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPagamento.Name = "btnPagamento";
-            this.btnPagamento.Size = new System.Drawing.Size(133, 32);
+            this.btnPagamento.Size = new System.Drawing.Size(177, 39);
             this.btnPagamento.TabIndex = 2;
             this.btnPagamento.Text = "Pagamento";
             this.btnPagamento.UseVisualStyleBackColor = true;
@@ -56,21 +59,23 @@ namespace Cafeteria_Carol
             // dataGridViewComandas
             // 
             this.dataGridViewComandas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewComandas.Location = new System.Drawing.Point(30, 28);
+            this.dataGridViewComandas.Location = new System.Drawing.Point(40, 34);
+            this.dataGridViewComandas.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridViewComandas.Name = "dataGridViewComandas";
-            this.dataGridViewComandas.Size = new System.Drawing.Size(602, 150);
+            this.dataGridViewComandas.RowHeadersWidth = 51;
+            this.dataGridViewComandas.Size = new System.Drawing.Size(803, 185);
             this.dataGridViewComandas.TabIndex = 0;
             this.dataGridViewComandas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewComandas_CellContentClick);
             // 
             // Tela_Comandas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(732, 366);
+            this.ClientSize = new System.Drawing.Size(976, 450);
             this.Controls.Add(this.btnPagamento);
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.dataGridViewComandas);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Tela_Comandas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tela_Comandas";

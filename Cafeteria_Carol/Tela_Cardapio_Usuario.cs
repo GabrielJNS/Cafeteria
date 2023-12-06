@@ -171,12 +171,17 @@ namespace Cafeteria_Carol
 
         private void btnAdicionarAoCarrinho_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
         private void btnRecarregar_Click(object sender, EventArgs e)
         {
             dataGridViewMenu1.Refresh();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
     }

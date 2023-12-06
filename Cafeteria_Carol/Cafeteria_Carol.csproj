@@ -218,6 +218,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Cafe-inc.ico" />
+    <None Include="Resources\GerenciarProd.png" />
+    <None Include="Resources\Cardapio.png" />
+    <None Include="Resources\CadastroFunc.png" />
+    <None Include="Resources\TelaMain.png" />
+    <None Include="Resources\AreaAtendente.png" />
+    <None Include="Resources\AreaAdmin.png" />
+    <None Include="Resources\Login.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

@@ -61,5 +61,10 @@ namespace Cafeteria_Carol
         private void dataGridViewComandas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
         }
+
+        private void lblTotal_Click(object sender, EventArgs e)
+        {
+            double Subtotal;
+        }
     }
 }
